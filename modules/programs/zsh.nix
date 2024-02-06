@@ -22,9 +22,11 @@
         enable = true;
 
         shellAliases = {
-          cat = "${pkgs.bat}/bin/bat";
+          cat = "${pkgs.bat}/bin/bat --color=always --style plain";
           grep = "grep --color";
           download = "aria2c -x16 -s16 -j16";
+          ls = "eza -aF";
+          la = "eza -laF";
         };
 
         zplug = {
