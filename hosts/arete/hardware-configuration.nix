@@ -26,7 +26,7 @@
     withRust = true;
     addEdgeKernelConfig = true;
     useExperimentalGPUDriver = true;
-    experimentalGPUInstallMode = "overlay";
+    # experimentalGPUInstallMode = "overlay";
   };
 
   networking.useDHCP = lib.mkDefault true;
