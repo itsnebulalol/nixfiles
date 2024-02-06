@@ -34,6 +34,7 @@
           plugins = [
             { name = "zsh-users/zsh-autosuggestions"; }
             { name = "zsh-users/zsh-syntax-highlighting"; }
+            { name = "spaceship-prompt/spaceship-prompt"; tags = [ use:spaceship.zsh from:github as:theme ]; }
           ];
         };
       };
