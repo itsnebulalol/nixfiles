@@ -8,6 +8,7 @@
   programs = {
     _1password.enable = true;
     chromium.enable = true;
+    gnome.enable = true;
     discord.enable = true;
     minecraft.enable = true;
     vscode.enable = true;
