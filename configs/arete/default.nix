@@ -20,5 +20,5 @@
 
   os.programs.nm-applet.enable = true;
 
-  os.environment.systemPackages = [pkgs.curl pkgs.wget pkgs.aria2];
+  os.environment.systemPackages = [pkgs.curl pkgs.wget pkgs.aria2 pkgs.dig];
 }
