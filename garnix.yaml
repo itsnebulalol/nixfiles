@@ -1,0 +1,7 @@
+builds:
+  exclude: []
+  include:
+    - '*.aarch64-linux.*'
+    - 'nixosConfigurations.*'
+    - 'formatter.*'
+    - 'devShell.*'
