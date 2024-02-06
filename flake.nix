@@ -3,6 +3,7 @@
 
   inputs = {
     apple-silicon-support = {url = "github:tpwrules/nixos-apple-silicon";};
+    nix-super = {url = "github:privatevoid-net/nix-super";};
     nixpkgs = {url = "github:nixos/nixpkgs/nixos-unstable";};
     home-manager = {
       inputs = {nixpkgs = {follows = "nixpkgs";};};
