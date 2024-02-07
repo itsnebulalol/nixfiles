@@ -2,6 +2,7 @@
   description = "Nebulas's NixOS config flake";
 
   inputs = {
+    agenix = {url = "github:ryantm/agenix";};
     apple-silicon-support = {url = "github:tpwrules/nixos-apple-silicon";};
     nix-super = {url = "github:privatevoid-net/nix-super";};
     nixpkgs = {url = "github:nixos/nixpkgs/nixos-unstable";};

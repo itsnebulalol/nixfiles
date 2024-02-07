@@ -14,6 +14,10 @@
     vscode.enable = true;
   };
 
+  services = {
+    tailscale.enable = true;
+  };
+
   hm.home.packages = with pkgs; [
     neofetch
   ];
