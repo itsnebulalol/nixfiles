@@ -16,14 +16,19 @@
       os.services.gnome.games.enable = false;
 
       # Systray
-      os.environment.systemPackages = with pkgs; [ gnomeExtensions.appindicator ];
-      os.services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+      os.environment.systemPackages = [ pkgs.gnomeExtensions.appindicator ];
+      os.services.udev.packages = [ pkgs.gnome.gnome-settings-daemon ];
 
-      # Dark Mode
+      # Dconf
       hm.users.nebula = {
         dconf = {
           enable = true;
           settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+          settings."org/gnome/shell".favorite-apps = [
+            "chromium.desktop"
+            "nautilus.desktop"
+            "gnome-terminal.desktop"
+          ];
         };
       };
 
