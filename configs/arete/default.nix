@@ -3,6 +3,7 @@
 
   rebuildCommand = "nh os switch $argv -- --impure";
 
+  agenix.enable = true;
   bluetooth.enable = true;
 
   programs = {

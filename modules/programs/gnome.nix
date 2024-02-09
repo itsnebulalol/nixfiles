@@ -40,19 +40,17 @@
       };
 
       # Dconf
-      hm.users.nebula = {
-        dconf = {
-          enable = true;
-          settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
-          settings."org/gnome/shell".favorite-apps = [
-            "chromium-desktop.desktop"
-            "org.Gnome.Nautilus.desktop"
-            "vesktop.desktop"
-            "org.gnome.Console.desktop"
-            "1password.desktop"
-            "code.desktop"
-          ];
-        };
+      hm.dconf = {
+        enable = true;
+        settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+        settings."org/gnome/shell".favorite-apps = [
+          "chromium-desktop.desktop"
+          "org.Gnome.Nautilus.desktop"
+          "vesktop.desktop"
+          "org.gnome.Console.desktop"
+          "1password.desktop"
+          "code.desktop"
+        ];
       };
     })
   ];

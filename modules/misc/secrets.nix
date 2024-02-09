@@ -23,14 +23,13 @@ in {
       hmModules = [inputs.agenix.homeManagerModules.default];
 
       os = {
-        age.secrets = lib.mkMerge [
-          (secretForHostnames ["arete"] ../../secrets/tailscale.age "tailscale" {})
-        ];
+        age = {
+          secrets = lib.mkMerge [
+            (secretForHostnames ["arete"] ../../secrets/tailscale.age "tailscale" {})
+          ];
+          identityPaths = ["/home/nebula/.ssh/id_ed25519"];
+        };
         environment.systemPackages = [inputs.agenix.packages.${pkgs.system}.default];
-      };
-
-      hm = {
-        age.identityPaths = ["/home/nebula/.ssh/id_ed25519"];
       };
     })
   ];
