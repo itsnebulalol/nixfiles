@@ -25,9 +25,12 @@
           enable = true;
           settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
           settings."org/gnome/shell".favorite-apps = [
-            "chromium.desktop"
-            "nautilus.desktop"
-            "gnome-terminal.desktop"
+            "chromium-desktop.desktop"
+            "org.Gnome.Nautilus.desktop"
+            "vesktop.desktop"
+            "org.gnome.Console.desktop"
+            "1password.desktop"
+            "code.desktop"
           ];
         };
       };
