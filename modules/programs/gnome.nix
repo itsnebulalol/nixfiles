@@ -44,7 +44,7 @@
         enable = true;
         settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
         settings."org/gnome/shell".favorite-apps = [
-          "chromium-desktop.desktop"
+          "chromium-browser.desktop"
           "org.Gnome.Nautilus.desktop"
           "vesktop.desktop"
           "org.gnome.Console.desktop"
