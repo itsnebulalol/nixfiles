@@ -8,12 +8,12 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/890f2023-dc4e-4e0d-9af4-c80cca29385c";
+    device = "/dev/disk/by-label/nixos";
     fsType = "ext4";
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/B7F5-191C";
+    device = "/dev/disk/by-label/boot";
     fsType = "vfat";
     options = ["noatime" "discard"];
   };
