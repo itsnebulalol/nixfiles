@@ -21,7 +21,7 @@
 
       serviceConfig = {
         Restart = "always";
-        ExecStart = "${inputs.tiny-dfr.defaultPackage.${pkgs.system}}/bin/tiny-dfr";
+        ExecStart = "${inputs.tiny-dfr.packages.${pkgs.system}.default}/bin/tiny-dfr";
       };
     };
 
