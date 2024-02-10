@@ -20,6 +20,8 @@
           udev.packages = [ pkgs.gnome.gnome-settings-daemon ];
         };
 
+        programs.gnome-terminal.enable = true;
+
         environment.systemPackages = [ pkgs.gnomeExtensions.appindicator ];
 
         # Dynamic triple buffering
@@ -51,6 +53,15 @@
           "1password.desktop"
           "code.desktop"
         ];
+        settings."org/gnome/mutter".experimental-features = ["scale-monitor-framebuffer"];
+        settings."org/gnome/desktop/wm/preferences".button-layout = "appmenu:minimize,maximize,close";
+        settings."org/gnome/settings-daemon.plugins.power" = {
+          idle-dim = false;
+          sleep-inactive-ac-type = "nothing";
+          sleep-inactive-battery-type = "nothing";
+        };
+        settings."org/gtk/gtk4/settings/file-chooser".show-hidden = true;
+        settings."org/gnome/desktop/interface".scaling-factor = 175;
       };
     })
   ];
