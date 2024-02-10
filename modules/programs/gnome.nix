@@ -49,7 +49,7 @@
           "chromium-browser.desktop"
           "org.Gnome.Nautilus.desktop"
           "vesktop.desktop"
-          "org.gnome.Console.desktop"
+          "org.gnome.Terminal.desktop"
           "1password.desktop"
           "code.desktop"
         ];
