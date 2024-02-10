@@ -10,7 +10,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager";
     };
-    tiny-dfr.url = "github:WhatAmISupposedToPutHere/tiny-dfr";
+    tiny-dfr.url = "github:itsnebulalol/tiny-dfr";
   };
 
   outputs = inputs @ {nixpkgs, ...}: let

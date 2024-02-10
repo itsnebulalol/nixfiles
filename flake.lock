@@ -331,15 +331,15 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1706900824,
-        "narHash": "sha256-Lgz/HC1ksdIsJo5rexXv4xFay6fj1KyO+l64Pf0FroI=",
-        "owner": "WhatAmISupposedToPutHere",
+        "lastModified": 1707597299,
+        "narHash": "sha256-zUFq0hvP7AY2Mc2V9tjNEuAohx9u9/LkpkS2/jB34RY=",
+        "owner": "itsnebulalol",
         "repo": "tiny-dfr",
-        "rev": "b5b795443908ffde65233aa1806298cde74bc494",
+        "rev": "c705df060491208d3acd5f14c3d9fb555a745a69",
         "type": "github"
       },
       "original": {
-        "owner": "WhatAmISupposedToPutHere",
+        "owner": "itsnebulalol",
         "repo": "tiny-dfr",
         "type": "github"
       }
