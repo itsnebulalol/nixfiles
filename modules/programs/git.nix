@@ -12,7 +12,6 @@ _: {
       color.ui = true;
       merge.clonflictStyle = "diff3";
       init.defaultBranch = "main";
-      gpg."ssh".program = "/opt/1Password/op-ssh-sign";
     };
   };
 }

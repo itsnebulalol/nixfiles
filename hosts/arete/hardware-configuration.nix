@@ -4,7 +4,7 @@
 }: {
   boot.initrd.availableKernelModules = [ "usb_storage" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ ];
+  boot.kernelModules = [ "apple_z2" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
