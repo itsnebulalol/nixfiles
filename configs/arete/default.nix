@@ -17,11 +17,15 @@
 
   services = {
     tailscale.enable = true;
+    tiny-dfr.enable = true;
   };
 
   hm.home.packages = with pkgs; [
     neofetch
   ];
 
-  os.programs.nm-applet.enable = true;
+  os = {
+    services.upower.enable = true;
+    programs.nm-applet.enable = true;
+  }
 }

@@ -2,14 +2,15 @@
   description = "Nebulas's NixOS config flake";
 
   inputs = {
-    agenix = {url = "github:ryantm/agenix";};
-    apple-silicon-support = {url = "github:tpwrules/nixos-apple-silicon";};
-    nix-super = {url = "github:privatevoid-net/nix-super";};
-    nixpkgs = {url = "github:nixos/nixpkgs/nixos-unstable";};
+    agenix.url = "github:ryantm/agenix";
+    apple-silicon-support.url = "github:tpwrules/nixos-apple-silicon";
+    nix-super.url = "github:privatevoid-net/nix-super";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
-      inputs = {nixpkgs = {follows = "nixpkgs";};};
+      inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager";
     };
+    tiny-dfr.url = "github:WhatAmISupposedToPutHere/tiny-dfr";
   };
 
   outputs = inputs @ {nixpkgs, ...}: let
@@ -22,13 +23,6 @@
       sha256 = "sha256:04rzv1ajxrcmjybk1agpv4rpwivy7g8mwfms8j3lhn09bqjqrxxf";
     });
   in {
-    /*packages = forAllSystems (
-      system: let
-        pkgs = nixpkgs.legacyPackages.${system};
-      in
-        import ./pkgs {inherit pkgs;}
-    );*/
-
     nixosConfigurations = {
       # M1 MacBook
       arete = combinedManager.nixosSystem {
