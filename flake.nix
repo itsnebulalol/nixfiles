@@ -14,6 +14,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:viperML/nh";
     };
+    nur.url = "github:nix-community/NUR";
     tiny-dfr.url = "github:itsnebulalol/tiny-dfr";
   };
 

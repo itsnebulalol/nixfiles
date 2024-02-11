@@ -5,6 +5,7 @@
 
   agenix.enable = true;
   bluetooth.enable = true;
+  nur.enable = true;
 
   programs = {
     _1password.enable = true;
