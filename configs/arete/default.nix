@@ -16,8 +16,8 @@
   };
 
   services = {
-    tailscale.enable = true;
     tiny-dfr.enable = true;
+    tailscale.enable = true;
   };
 
   hm.home.packages = with pkgs; [

@@ -44,25 +44,29 @@
       # Dconf
       hm.dconf = {
         enable = true;
-        settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
-        settings."org/gnome/shell".favorite-apps = [
-          "chromium-browser.desktop"
-          "org.gnome.Nautilus.desktop"
-          "vesktop.desktop"
-          "org.gnome.Terminal.desktop"
-          "1password.desktop"
-          "code.desktop"
-        ];
+        settings."org/gnome/desktop/interface" = {
+          color-scheme = "prefer-dark";
+          scaling-factor = 175;
+        };
+        settings."org/gnome/shell" = {
+          favorite-apps = [
+            "chromium-browser.desktop"
+            "org.gnome.Nautilus.desktop"
+            "vesktop.desktop"
+            "org.gnome.Terminal.desktop"
+            "1password.desktop"
+            "code.desktop"
+          ];
+          enabled-extensions = ["appindicatorsupport@rgcjonas.gmail.com"];
+        };
         settings."org/gnome/mutter".experimental-features = ["scale-monitor-framebuffer"];
         settings."org/gnome/desktop/wm/preferences".button-layout = "appmenu:minimize,maximize,close";
-        settings."org/gnome/settings-daemon.plugins.power" = {
+        settings."org/gnome/settings-daemon/plugins/power" = {
           idle-dim = false;
           sleep-inactive-ac-type = "nothing";
           sleep-inactive-battery-type = "nothing";
         };
         settings."org/gtk/gtk4/settings/file-chooser".show-hidden = true;
-        settings."org/gnome/desktop/interface".scaling-factor = 175;
-        settings."org/gnome/shell/enabled-extensions" = ["appindicatorsupport@rgcjonas.gmail.com"];
       };
     })
   ];

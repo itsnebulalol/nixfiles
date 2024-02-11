@@ -14,11 +14,14 @@
 - Git
 - Gnome
 - Minecraft (Prism Launcher)
+- nh
 - VSCode
 - zsh
 
 ### Services
 
+- tiny-dfr
+- SSH
 - Tailscale
 
 ## Credits
