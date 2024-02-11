@@ -62,6 +62,7 @@
         };
         settings."org/gtk/gtk4/settings/file-chooser".show-hidden = true;
         settings."org/gnome/desktop/interface".scaling-factor = 175;
+        settings."org/gnome/shell/enabled-extensions" = ["appindicatorsupport@rgcjonas.gmail.com"];
       };
     })
   ];
