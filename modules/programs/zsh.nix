@@ -6,7 +6,7 @@
   ...
 }: {
   options.rebuildCommand = lib.mkOption {
-    default = "nh os switch $argv";
+    default = "nh os switch";
     type = lib.types.str;
   };
 

@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   users.main = "nebula";
 
-  rebuildCommand = "nh os switch arete -- --impure";
+  rebuildCommand = "nh os switch -- --impure";
 
   agenix.enable = true;
   bluetooth.enable = true;
