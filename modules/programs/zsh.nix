@@ -27,6 +27,7 @@
           download = "aria2c -x16 -s16 -j16";
           ls = "eza -aF";
           la = "eza -laF";
+          nswitch = config.rebuildCommand;
         };
 
         zplug = {

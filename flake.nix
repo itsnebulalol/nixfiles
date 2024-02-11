@@ -10,6 +10,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager";
     };
+    nh = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:viperML/nh";
+    };
     tiny-dfr.url = "github:itsnebulalol/tiny-dfr";
   };
 
