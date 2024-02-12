@@ -21,6 +21,7 @@
   outputs = inputs @ {nixpkgs, ...}: let
     forAllSystems = nixpkgs.lib.genAttrs [
       "aarch64-linux"
+      "x86_64-linux"
     ];
 
     combinedManager = import (builtins.fetchTarball {
@@ -37,6 +38,17 @@
           ./modules
           ./hosts/arete
           ./configs/arete
+        ];
+      };
+
+      # PC
+      cratos = combinedManager.nixosSystem {
+        system = "x86_64-linux";
+        inherit inputs;
+        modules = [
+          ./modules
+          ./hosts/cratos
+          ./configs/cratos
         ];
       };
     };
