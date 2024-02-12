@@ -9,9 +9,10 @@
   os = {
     nixpkgs.config.allowUnfree = true;
 
-    boot.loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = false;
+    boot.loader.grub = {
+      enable = true;
+      device = "nodev";
+      useOSProber = true;
     };
 
     networking = {
@@ -28,9 +29,11 @@
       pulse.enable = true;
     };
 
+    services.avahi.enable = true;
+
     hardware.opengl = {
       driSupport = true;
-      driSupport32Bit = lib.mkForce false;
+      driSupport32Bit = true;
     };
 
     users.users = let
@@ -43,6 +46,7 @@
     };
 
     time.timeZone = "America/New_York";
+    time.hardwareClockInLocalTime = true;
 
     system.stateVersion = "23.05";
   };

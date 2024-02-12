@@ -2,7 +2,7 @@
   lib,
   ...
 }: {
-  boot.initrd.availableKernelModules = [ "usb_storage" ];
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
