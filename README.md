@@ -3,6 +3,7 @@
 ## Hosts
 
 - Arete (MacBook Pro M1, 2020, 13")
+- Cratos (PC)
 
 ## Modules
 
