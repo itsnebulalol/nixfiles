@@ -652,9 +652,9 @@
         "logLimit": 50
     },
     "cloud": {
-        "authenticated": true,
+        "authenticated": false,
         "url": "https://api.vencord.dev/",
-        "settingsSync": true,
+        "settingsSync": false,
         "settingsSyncVersion": 1707596296137
     },
     "enabledThemes": [],
