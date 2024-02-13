@@ -7,7 +7,7 @@
 }: {
   options.programs.spotify.enable = lib.mkEnableOption "Spotify";
 
-  os.programs.spicetify = lib.mkIf config.programs.spotify.enable {
+  config.hm.programs.spicetify = lib.mkIf config.programs.spotify.enable {
     enable = true;
 
     spotifyPackage = pkgs.spotify;

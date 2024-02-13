@@ -15,6 +15,7 @@
       url = "github:viperML/nh";
     };
     nur.url = "github:nix-community/NUR";
+    spicetify-nix.url = "github:the-argus/spicetify-nix";
     tiny-dfr.url = "github:itsnebulalol/tiny-dfr";
   };
 
