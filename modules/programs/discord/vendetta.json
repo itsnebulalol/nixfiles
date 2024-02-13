@@ -5,7 +5,7 @@
     "useQuickCss": true,
     "themeLinks": [
         "https://raw.githubusercontent.com/llsc12/discord-acrylic/main/Acrylic.theme.css",
-        "https://gist.githubusercontent.com/llsc12/16c7067f97867fafde2d2c6c0dd5cd1d/raw/6ac40d6dd75e477117f50e4d757daeb67525f9cb/discord-accent-color.css",
+        "https://raw.githubusercontent.com/itsnebulalol/rose-pine-discord/main/rose-pine.theme.css",
         "https://gist.githubusercontent.com/itsnebulalol/d520d8530e27c194c5359a5b77e9774a/raw/ccaf2ef2775de9df2ccd69b9d6c1b03231eeb93d/discord.css"
     ],
     "enableReactDevtools": true,

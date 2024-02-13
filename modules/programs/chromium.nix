@@ -15,6 +15,8 @@
         { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; }
         # 1Password Nightly
         { id = "gejiddohjgogedgjnonbofjigllpkmbf"; }
+        # Rose Pine Theme
+        { id = "noimedcjdohhokijigpfcbjcfcaaahej"; }
       ];
     };
   };
