@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  inputs,
   ...
 }: {
   options.programs.spotify.enable = lib.mkEnableOption "Spotify";
@@ -33,7 +34,7 @@
       misc = "6e6a86";
     };
 
-    enabledExtensions = with spicePkgs.extensions; [
+    enabledExtensions = with inputs.spicetify-nix.packages.${pkgs.system}.default.extensions; [
       lastfm
       hidePodcasts
       shuffle
