@@ -5,7 +5,7 @@
   inputs,
   ...
 }: let
-  spicePkgs = spicetify-nix.packages.${pkgs.system}.default;
+  spicePkgs = inputs.spicetify-nix.packages.${pkgs.system}.default;
 in {
   options.programs.spotify.enable = lib.mkEnableOption "Spotify";
 
