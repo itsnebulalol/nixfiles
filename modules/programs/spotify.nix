@@ -4,40 +4,30 @@
   pkgs,
   inputs,
   ...
-}: {
+}: let
+  spicePkgs = spicetify-nix.packages.${pkgs.system}.default;
+in {
   options.programs.spotify.enable = lib.mkEnableOption "Spotify";
 
-  config.hm.programs.spicetify = lib.mkIf config.programs.spotify.enable {
-    enable = true;
+  config = lib.mkMerge [
+    (lib.mkIf config.programs.spotify.enable {
+      hmModules = [inputs.spicetify-nix.homeManagerModule];
 
-    spotifyPackage = pkgs.spotify;
-    spicetifyPackage = pkgs.spicetify-cli;
+      os.programs.spicetify = {
+        enable = true;
 
-    # rosepine color scheme
-    colorScheme = "custom";
-    customColorScheme = {
-      text = "ebbcba";
-      subtext = "F0F0F0";
-      sidebar-text = "e0def4";
-      main = "191724";
-      sidebar = "2a2837";
-      player = "191724";
-      card = "191724";
-      shadow = "1f1d2e";
-      selected-row = "797979";
-      button = "31748f";
-      button-active = "31748f";
-      button-disabled = "555169";
-      tab-active = "ebbcba";
-      notification = "1db954";
-      notification-error = "eb6f92";
-      misc = "6e6a86";
-    };
+        spotifyPackage = pkgs.spotify;
+        spicetifyPackage = pkgs.spicetify-cli;
 
-    enabledExtensions = with inputs.spicetify-nix.packages.${pkgs.system}.default.extensions; [
-      lastfm
-      hidePodcasts
-      shuffle
-    ];
-  };
+        theme = spicePkgs.themes.ziro;
+        colorScheme = "rose-pine";
+
+        enabledExtensions = with spicePkgs.extensions; [
+          lastfm
+          hidePodcasts
+          shuffle
+        ];
+      }
+    })
+  ];
 }
