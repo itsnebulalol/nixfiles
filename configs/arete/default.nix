@@ -24,9 +24,4 @@
   hm.home.packages = with pkgs; [
     neofetch
   ];
-
-  os = {
-    services.upower.enable = true;
-    programs.nm-applet.enable = true;
-  };
 }

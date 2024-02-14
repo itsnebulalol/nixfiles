@@ -2,10 +2,19 @@
   lib,
   ...
 }: {
-  boot.initrd.availableKernelModules = [ "usb_storage" ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd.availableKernelModules = ["usbhid" "usb_storage" "sd_mod"];
+  boot.initrd.kernelModules = ["usbhid" "dm-snapshot"];
   boot.kernelModules = [ "apple_z2" ];
   boot.extraModulePackages = [ ];
+
+  services.upower.enable = true;
+
+  boot.initrd.luks.devices = {
+    nixos-enc = {
+      device = "/dev/nvme0n1p5";
+      preLVM = true;
+    };
+  };
 
   fileSystems."/" = {
     device = "/dev/disk/by-label/nixos";
@@ -18,7 +27,7 @@
     options = ["noatime" "discard"];
   };
 
-  swapDevices = [ ];
+  swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
 
   hardware.asahi = {
     extractPeripheralFirmware = true;
