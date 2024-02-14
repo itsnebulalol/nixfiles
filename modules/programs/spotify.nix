@@ -27,7 +27,7 @@ in {
           hidePodcasts
           shuffle
         ];
-      }
+      };
     })
   ];
 }
