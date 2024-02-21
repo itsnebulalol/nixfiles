@@ -14,8 +14,10 @@
 - Discord (Vesktop)
 - Git
 - Gnome
+- KDE
 - Minecraft (Prism Launcher)
 - nh
+- Spotify
 - VSCode
 - zsh
 

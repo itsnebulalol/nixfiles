@@ -10,6 +10,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager";
     };
+    plasma-manager = {
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
+      url = "github:pjones/plasma-manager";
+    };
     nh = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:viperML/nh";
@@ -30,6 +37,13 @@
       sha256 = "sha256:04rzv1ajxrcmjybk1agpv4rpwivy7g8mwfms8j3lhn09bqjqrxxf";
     });
   in {
+    packages = forAllSystems (
+      system: let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in
+        import ./pkgs {inherit pkgs;}
+    );
+
     nixosConfigurations = {
       # M1 MacBook
       arete = combinedManager.nixosSystem {

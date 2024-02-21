@@ -17,6 +17,8 @@
         { id = "gejiddohjgogedgjnonbofjigllpkmbf"; }
         # Rose Pine Theme
         { id = "noimedcjdohhokijigpfcbjcfcaaahej"; }
+        # Plasma Integration
+        { id = "cimiefiiaegbelhefglklhhakcgmhkai"; }
       ];
     };
   };

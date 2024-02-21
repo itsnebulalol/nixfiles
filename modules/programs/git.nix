@@ -8,10 +8,14 @@ _: {
       github.user = "itsnebulalol";
       pull.rebase = false;
       commit.gpgSign = true;
-      gpg.format = "ssh";
       color.ui = true;
       merge.clonflictStyle = "diff3";
       init.defaultBranch = "main";
+      gpg = {
+        format = "ssh";
+        "ssh".program = "/run/current-system/sw/bin/op-ssh-sign";
+      };
+      url."ssh://git@github.com/".insteadOf = "https://github.com/";
     };
   };
 }
