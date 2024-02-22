@@ -36,6 +36,7 @@
             { name = "zsh-users/zsh-autosuggestions"; }
             { name = "zsh-users/zsh-syntax-highlighting"; }
             { name = "spaceship-prompt/spaceship-prompt"; tags = [ use:spaceship.zsh from:github as:theme ]; }
+            { name = "chisui/zsh-nix-shell"; tags = [ use:nix-shell.plugin.zsh from:github ]; }
           ];
         };
       };
