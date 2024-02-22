@@ -4,11 +4,12 @@
   pkgs,
   ...
 }: {
-  osModules = [./hardware-configuration.nix];
+  osModules = [inputs.nixos-hardware.nixosModules.raspberry-pi-4 ./hardware-configuration.nix];
 
   os = {
     nixpkgs.config.allowUnfree = true;
 
+    boot.kernelPackages = pkgs.linuxKernel.packages.linux_rpi4;
     boot.loader = {
       grub.enable = false;
       generic-extlinux-compatible.enable = true;
