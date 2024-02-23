@@ -7,6 +7,8 @@
   nur.enable = true;
 
   services = {
+    caddy.enable = true;
+    # conduit.enable = true;
     tailscale.enable = true;
   };
 
