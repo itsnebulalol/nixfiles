@@ -1,4 +1,4 @@
-{lib, ...}: let
+{ lib, ... }: let
   inherit (lib) attrNames optional hasSuffix;
   inherit (builtins) elem readDir foldl';
 

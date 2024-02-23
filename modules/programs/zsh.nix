@@ -2,7 +2,6 @@
   pkgs,
   lib,
   config,
-  hmConfig,
   ...
 }: {
   options.rebuildCommand = lib.mkOption {

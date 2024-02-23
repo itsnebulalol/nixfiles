@@ -1,7 +1,4 @@
-{
-  hmConfig,
-  ...
-}: {
+_: {
   os.services.openssh = {
     enable = true;
     settings = {

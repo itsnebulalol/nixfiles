@@ -1,9 +1,4 @@
-{
-  lib,
-  inputs,
-  pkgs,
-  ...
-}: {
+_: {
   osModules = [./hardware-configuration.nix];
 
   os = {

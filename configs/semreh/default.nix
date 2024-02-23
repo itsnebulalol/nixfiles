@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   users.main = "nebula";
 
   rebuildCommand = "nh os switch";

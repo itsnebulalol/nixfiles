@@ -4,6 +4,7 @@
   inputs = {
     agenix.url = "github:ryantm/agenix";
     apple-silicon-support.url = "github:tpwrules/nixos-apple-silicon";
+    conduit.url = "gitlab:famedly/conduit/next";
     nix-super.url = "github:privatevoid-net/nix-super";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware";

@@ -1,7 +1,4 @@
-{
-  lib,
-  ...
-}: {
+{ lib, ... }: {
   boot.initrd.availableKernelModules = ["usbhid" "usb_storage" "sd_mod"];
   boot.initrd.kernelModules = ["usbhid" "dm-snapshot"];
   boot.kernelModules = [ "apple_z2" ];

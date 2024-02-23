@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   users.main = "nebula";
 
   rebuildCommand = "nh os switch";
@@ -24,7 +24,5 @@
     neofetch
   ];
 
-  os = {
-    programs.nm-applet.enable = true;
-  };
+  os.programs.nm-applet.enable = true;
 }

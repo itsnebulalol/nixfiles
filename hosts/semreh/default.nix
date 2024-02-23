@@ -1,9 +1,4 @@
-{
-  lib,
-  inputs,
-  pkgs,
-  ...
-}: {
+{ inputs, ... }: {
   osModules = [inputs.nixos-hardware.nixosModules.raspberry-pi-4 ./hardware-configuration.nix];
 
   os = {
