@@ -14,7 +14,6 @@
       enable = true;
       settings.global = {
         server_name = "itsnebula.net";
-        # allow_registration = true;
         database_backend = "rocksdb";
       };
     };
@@ -24,6 +23,9 @@
     services.caddy = {
       enable = true;
       virtualHosts."matrix.itsnebula.net".extraConfig = ''
+        reverse_proxy /_matrix/* [${osConfig.services.matrix-conduit.settings.global.address}]:${toString osConfig.services.matrix-conduit.settings.global.port}
+      '';
+      virtualHosts."matrix.itsnebula.net:8448".extraConfig = ''
         reverse_proxy /_matrix/* [${osConfig.services.matrix-conduit.settings.global.address}]:${toString osConfig.services.matrix-conduit.settings.global.port}
       '';
     };
