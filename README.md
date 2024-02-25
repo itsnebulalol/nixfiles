@@ -25,6 +25,9 @@
 
 ### Services
 
+- Caddy
+- Conduit
+- nostr-rs-relay
 - tiny-dfr
 - SSH
 - Tailscale
