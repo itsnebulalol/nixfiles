@@ -8,7 +8,6 @@ relay_icon = "https://itsnebula.net/favicon.png"
 
 [database]
 engine = "sqlite"
-max_conn = 2
 
 [logging]
 
