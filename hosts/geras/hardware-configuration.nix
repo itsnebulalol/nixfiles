@@ -1,8 +1,4 @@
-{
-  lib,
-  osConfig,
-  ...
-}: {
+{ lib, ... }: {
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "uas" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
@@ -17,12 +13,6 @@
     device = "/dev/disk/by-label/boot";
     fsType = "vfat";
     options = ["noatime" "discard"];
-  };
-
-  fileSystems."/data" = {
-    device = "/dev/sdb";
-    fsType = "xfs";
-    options = ["uid=${toString osConfig.users.users.nebula.uid}" "gid=${toString osConfig.users.users.nebula.uid}"];
   };
 
   swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];

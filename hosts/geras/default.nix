@@ -1,6 +1,5 @@
 {
-  pkgs,
-  inputs,
+  osConfig,
   ...
 }: {
   osModules = [./hardware-configuration.nix];
@@ -38,6 +37,12 @@
     in {
       nebula.openssh.authorizedKeys.keys = keys;
       root.openssh.authorizedKeys.keys = keys;
+    };
+
+    fileSystems."/data" = {
+      device = "/dev/disk/by-label/data";
+      fsType = "xfs";
+      options = ["uid=${toString osConfig.users.users.nebula.uid}" "gid=${toString osConfig.users.users.nebula.uid}"];
     };
 
     time.timeZone = "America/New_York";
