@@ -25,10 +25,11 @@
       };
     };
 
-    environment.etc."tiny-dfr" = {
+    environment.etc."tiny-dfr/out" = {
       mode = "symlink";
       source = "${inputs.tiny-dfr}/share/tiny-dfr";
     };
+    environment.etc."tiny-dfr/config.toml".source = ./config.toml;
 
     services.udev.extraRules = ''
       SUBSYSTEM=="backlight", KERNEL=="228200000.display-pipe.0", DRIVERS=="panel-summit", ENV{SYSTEMD_READY}="0"
@@ -51,9 +52,5 @@
         '';
       }
     ];
-  };
-
-  config.hm = lib.mkIf config.services.tiny-dfr.enable {
-    xdg.configFile."tiny-dfr/config.toml".source = ./config.toml;
   };
 }

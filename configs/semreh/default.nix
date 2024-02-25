@@ -9,6 +9,7 @@
   services = {
     caddy.enable = true;
     conduit.enable = true;
+    nostr-relay.enable = true;
     tailscale.enable = true;
   };
 
