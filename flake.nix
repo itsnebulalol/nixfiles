@@ -69,6 +69,17 @@
         ];
       };
 
+      # Dell Inspiron
+      geras = combinedManager.nixosSystem {
+        system = "x86_64-linux";
+        inherit inputs;
+        modules = [
+          ./modules
+          ./hosts/geras
+          ./configs/geras
+        ];
+      };
+
       # Raspberry Pi 4
       semreh = combinedManager.nixosSystem {
         system = "aarch64-linux";
