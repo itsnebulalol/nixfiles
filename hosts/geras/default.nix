@@ -25,9 +25,24 @@
       nameservers = [ "192.168.1.242" "192.168.1.221" ];
     };
 
-    systemd.services.NetworkManager-wait-online.enable = false;
+    systemd = {
+      sleep.extraConfig = ''
+        AllowSuspend=no
+        AllowHibernation=no
+        AllowSuspendThenHibernate=no
+        AllowHybridSleep=no
+      '';
+      services.NetworkManager-wait-online.enable = false;
+    };
 
-    services.avahi.enable = true;
+    services = {
+      avahi.enable = true;
+      logind.extraConfig = ''
+        LidSwitchIgnoreInhibited=no
+        HandlePowerKey=ignore
+        HandleLidSwitch=ignore
+      '';
+    };
 
     users.users = let
       keys = [
