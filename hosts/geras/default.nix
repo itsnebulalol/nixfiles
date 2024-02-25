@@ -57,7 +57,7 @@
     fileSystems."/data" = {
       device = "/dev/disk/by-label/data";
       fsType = "ext4";
-      options = ["uid=${toString osConfig.users.users.nebula.uid}" "gid=${toString osConfig.users.users.nebula.uid}"];
+      options = ["uid=1000" "gid=100"];
     };
 
     time.timeZone = "America/New_York";
