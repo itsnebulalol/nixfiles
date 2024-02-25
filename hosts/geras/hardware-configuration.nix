@@ -15,6 +15,12 @@
     options = ["noatime" "discard"];
   };
 
+  fileSystems."/data" = {
+    device = "/dev/sdb";
+    fsType = "xfs";
+    options = ["uid=${toString osConfig.users.users.nebula.uid}" "gid=${toString osConfig.users.users.nebula.uid}"];
+  };
+
   swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
 
   networking.useDHCP = lib.mkDefault true;
