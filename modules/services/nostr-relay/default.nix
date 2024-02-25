@@ -32,6 +32,10 @@
       };
     };
 
+    systemd.tmpfiles.rules = [
+      "d /etc/nostr-rs-relay 0770 nostr nostr -"
+    ];
+
     environment.etc."nostr-rs-relay/config.toml".source = ./config.toml;
 
     users.users.nostr = {
