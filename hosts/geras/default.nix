@@ -56,7 +56,7 @@
 
     fileSystems."/data" = {
       device = "/dev/disk/by-label/data";
-      fsType = "xfs";
+      fsType = "ext4";
       options = ["uid=${toString osConfig.users.users.nebula.uid}" "gid=${toString osConfig.users.users.nebula.uid}"];
     };
 
