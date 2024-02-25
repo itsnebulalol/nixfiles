@@ -4,6 +4,7 @@
 
 - Arete (MacBook Pro M1, 2020, 13")
 - Cratos (PC)
+- Geras (Old Dell Inspiron)
 - Semreh (Raspberry Pi 4)
 
 ## Modules
