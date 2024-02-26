@@ -39,7 +39,7 @@ in {
         '';
         shares = {
           ${cfg.shareName} = {
-            path = cfg.shareName;
+            path = cfg.path;
             browseable = "yes";
             "read only" = "no";
             "guest ok" = "no";
