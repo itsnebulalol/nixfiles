@@ -22,8 +22,6 @@
   };
 
   hm.home.packages = with pkgs; [
-    neofetch
-
     moonlight-qt
   ];
 }

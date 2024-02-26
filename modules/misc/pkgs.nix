@@ -1,4 +1,12 @@
 { pkgs, ... }: {
   os.nixpkgs.overlays = [(import ../../pkgs/overlays)];
-  os.environment.systemPackages = [pkgs.curl pkgs.wget pkgs.aria2 pkgs.dig pkgs.python3];
+  os.environment.systemPackages = with pkgs; [
+    curl
+    wget
+    aria2
+    dig
+    python3
+    ripgrep
+    neofetch
+  ];
 }

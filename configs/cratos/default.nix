@@ -20,9 +20,5 @@
     tailscale.enable = true;
   };
 
-  hm.home.packages = with pkgs; [
-    neofetch
-  ];
-
   os.programs.nm-applet.enable = true;
 }

@@ -7,10 +7,13 @@
   nur.enable = true;
 
   services = {
+    samba = {
+      enable = true;
+
+      serverName = "geras";
+      shareName = "geras";
+      path = "/data";
+    };
     tailscale.enable = true;
   };
-
-  hm.home.packages = with pkgs; [
-    neofetch
-  ];
 }

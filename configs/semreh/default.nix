@@ -16,7 +16,5 @@
   hm.home.packages = with pkgs; [
     libraspberrypi
     raspberrypi-eeprom
-
-    neofetch
   ];
 }
