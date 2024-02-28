@@ -17,4 +17,5 @@ let
 
 in {
   "tailscale.age".publicKeys = arete ++ geras ++ semreh;
+  "cloudflared.age".publicKeys = semreh;
 }

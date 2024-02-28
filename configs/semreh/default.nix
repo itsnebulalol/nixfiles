@@ -7,7 +7,8 @@
   nur.enable = true;
 
   services = {
-    caddy.enable = true;
+    # caddy.enable = true;
+    cloudflared.enable = true;
     conduit.enable = true;
     nostr-relay.enable = true;
     tailscale.enable = true;

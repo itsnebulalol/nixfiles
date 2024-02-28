@@ -20,7 +20,7 @@
 
     networking.firewall.allowedTCPPorts = [80 443 8448];
 
-    services.caddy = {
+    /* services.caddy = {
       enable = true;
       virtualHosts."matrix.itsnebula.net".extraConfig = ''
         reverse_proxy /_matrix/* [${osConfig.services.matrix-conduit.settings.global.address}]:${toString osConfig.services.matrix-conduit.settings.global.port}
@@ -28,6 +28,6 @@
       virtualHosts."matrix.itsnebula.net:8448".extraConfig = ''
         reverse_proxy /_matrix/* [${osConfig.services.matrix-conduit.settings.global.address}]:${toString osConfig.services.matrix-conduit.settings.global.port}
       '';
-    };
+    }; */
   };
 }

@@ -26,6 +26,7 @@ in {
         age = {
           secrets = lib.mkMerge [
             (secretForHostnames ["arete" "geras" "semreh"] ../../secrets/tailscale.age "tailscale" {})
+            (secretForHostnames ["semreh"] ../../secrets/cloudflared.age "cloudflared" { owner = "cloudflared"; })
           ];
           identityPaths = ["/home/nebula/.ssh/id_ed25519"];
         };

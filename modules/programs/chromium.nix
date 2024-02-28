@@ -19,6 +19,8 @@
         { id = "noimedcjdohhokijigpfcbjcfcaaahej"; }
         # Plasma Integration
         { id = "cimiefiiaegbelhefglklhhakcgmhkai"; }
+        # GetAlby
+        { id = "iokeahhehimjnekafflcihljlcjccdbe"; }
       ];
     };
   };
