@@ -15,10 +15,12 @@
       enable = true;
       virtualHosts = {
         "f.itsnebula.net".extraConfig = ''
+          tls internal
           reverse_proxy server.coin-gray.ts.net:5381
         '';
 
         "ig.itsnebula.net".extraConfig = ''
+          tls internal
           reverse_proxy server.coin-gray.ts.net:2741
         '';
       };

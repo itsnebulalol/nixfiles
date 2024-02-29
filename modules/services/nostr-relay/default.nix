@@ -46,11 +46,11 @@
 
     users.groups.nostr = {};
 
-    services.caddy = {
+    /* services.caddy = {
       enable = true;
       virtualHosts."nostr.itsnebula.net".extraConfig = ''
         reverse_proxy 127.0.0.1:4629
       '';
-    };
+    }; */
   };
 }

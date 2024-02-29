@@ -11,19 +11,14 @@
       enable = true;
 
       tunnels = {
-        "47bf6f5a-a864-4903-9a18-1045d7c8f179" = {
+        "4978c8b8-c9fe-47b9-af50-d59921ebdde1" = {
           credentialsFile = osConfig.age.secrets.cloudflared.path;
           ingress = {
             "f.itsnebula.net" = "http://server.coin-gray.ts.net:5381";
             "ig.itsnebula.net" = "http://server.coin-gray.ts.net:2741";
-
+            "nostr.itsnebula.net" = "http://127.0.0.1:4629";
             "matrix.itsnebula.net" = {
-              service = "http://127.0.0.1:${toString osConfig.services.matrix-conduit.settings.global.port}";
-              path = "/_matrix";
-            };
-            "matrix-fed.itsnebula.net" = {
-              originRequest.httpHostHeader = "matrix.itsnebula.net";
-              service = "http://127.0.0.1:${toString osConfig.services.matrix-conduit.settings.global.port}";
+              service = "http://[${osConfig.services.matrix-conduit.settings.global.address}]:${toString osConfig.services.matrix-conduit.settings.global.port}";
               path = "/_matrix";
             };
           };
