@@ -7,6 +7,7 @@
   nur.enable = true;
 
   services = {
+    monero.enable = true;
     samba = {
       enable = true;
 
