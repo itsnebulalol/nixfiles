@@ -11,7 +11,7 @@
     home = {
       packages = [pkgs.vscode pkgs.wakatime];
 
-      file.".wakatime.cfg".source = hmConfig.age.secrets.wakatime.path;
+      # file.".wakatime.cfg".source = hmConfig.lib.file.mkOutOfStoreSymlink "/run/user/1000/agenix/wakatime";
     };
   };
 }

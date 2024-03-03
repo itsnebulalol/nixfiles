@@ -37,6 +37,10 @@
           };
 
           configFile = {
+            "kcminputrc"."Libinput\\.1452\\.833\\.Apple Internal Keyboard / Trackpad"."DisableWhileTyping" = false;
+            "kcminputrc"."Libinput\\.1452\\.833\\.Apple Internal Keyboard / Trackpad"."TapToClick" = false;
+            "kdeglobals"."General"."BrowserApplication" = "chromium-browser.desktop";
+            "kdeglobals"."General"."AllowKDEAppsToRememberWindowPositions" = true;
             "kded5rc"."Module-browserintegrationreminder"."autoload" = false;
             "kded5rc"."PlasmaBrowserIntegration"."shownCount" = 100;
             "plasma-org\\.kde\\.plasma\\.desktop-appletsrc"."Containments\\.2\\.Applets\\.5\\.Configuration\\.General"."launchers" = "preferred://filemanager,preferred://browser,applications:vesktop.desktop,applications:org.kde.konsole.desktop,applications:code-url-handler.desktop";

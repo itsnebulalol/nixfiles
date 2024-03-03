@@ -13,6 +13,6 @@
     services.monero = {
       enable = true;
       dataDir = "/data/monero";
-    }
+    };
   };
 }
