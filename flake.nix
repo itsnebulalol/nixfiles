@@ -49,13 +49,15 @@
     nixosConfigurations = {
       # M1 MacBook
       arete = combinedManager.nixosSystem {
-        system = "aarch64-linux";
         inherit inputs;
-        modules = [
-          ./modules
-          ./hosts/arete
-          ./configs/arete
-        ];
+        configuration = {
+          system = "aarch64-linux";
+          modules = [
+            ./modules
+            ./hosts/arete
+            ./configs/arete
+          ];
+        };
       };
 
       # PC
@@ -71,24 +73,28 @@
 
       # Dell Inspiron
       geras = combinedManager.nixosSystem {
-        system = "x86_64-linux";
         inherit inputs;
-        modules = [
-          ./modules
-          ./hosts/geras
-          ./configs/geras
-        ];
+        configuration = {
+          system = "x86_64-linux";
+          modules = [
+            ./modules
+            ./hosts/geras
+            ./configs/geras
+          ];
+        };
       };
 
       # Raspberry Pi 4
       semreh = combinedManager.nixosSystem {
-        system = "aarch64-linux";
         inherit inputs;
-        modules = [
-          ./modules
-          ./hosts/semreh
-          ./configs/semreh
-        ];
+        configuration = {
+          system = "aarch64-linux";
+          modules = [
+            ./modules
+            ./hosts/semreh
+            ./configs/semreh
+          ];
+        };
       };
     };
   };
