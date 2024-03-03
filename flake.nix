@@ -35,8 +35,8 @@
     ];
 
     combinedManager = import (builtins.fetchTarball {
-      url = "https://github.com/flafydev/combined-manager/archive/9474a2432b47c0e6fa0435eb612a32e28cbd99ea.tar.gz";
-      sha256 = "sha256:04rzv1ajxrcmjybk1agpv4rpwivy7g8mwfms8j3lhn09bqjqrxxf";
+      url = "https://github.com/flafydev/combined-manager/archive/e7ba6d6b57ee03352022660fcd572c973b6b26db.tar.gz";
+      sha256 = "sha256:11raq3s4d7b0crihx8pilhfp74xp58syc36xrsx6hdscyiild1z7";
     });
   in {
     packages = forAllSystems (
@@ -59,15 +59,15 @@
       };
 
       # PC
-      cratos = combinedManager.nixosSystem {
-        system = "x86_64-linux";
-        inherit inputs;
-        modules = [
-          ./modules
-          ./hosts/cratos
-          ./configs/cratos
-        ];
-      };
+      #cratos = combinedManager.nixosSystem {
+      #  system = "x86_64-linux";
+      #  inherit inputs;
+      #  modules = [
+      #    ./modules
+      #    ./hosts/cratos
+      #    ./configs/cratos
+      #  ];
+      #};
 
       # Dell Inspiron
       geras = combinedManager.nixosSystem {

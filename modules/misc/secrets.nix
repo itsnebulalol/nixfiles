@@ -23,14 +23,18 @@ in {
       hmModules = [inputs.agenix.homeManagerModules.default];
 
       os = {
-        age = {
-          secrets = lib.mkMerge [
-            (secretForHostnames ["arete" "geras" "semreh"] ../../secrets/tailscale.age "tailscale" {})
-            (secretForHostnames ["semreh"] ../../secrets/cloudflared.age "cloudflared" { owner = "cloudflared"; })
-          ];
-          identityPaths = ["/home/nebula/.ssh/id_ed25519"];
-        };
+        age.secrets = lib.mkMerge [
+          (secretForHostnames ["arete" "geras" "semreh"] ../../secrets/tailscale.age "tailscale" {})
+          (secretForHostnames ["semreh"] ../../secrets/cloudflared.age "cloudflared" { owner = "cloudflared"; })
+        ];
         environment.systemPackages = [inputs.agenix.packages.${pkgs.system}.default];
+      };
+
+      hm.age = {
+        secrets = lib.mkMerge [
+          (secretForHostnames ["arete"] ../../secrets/wakatime.age "wakatime" {})
+        ];
+        identityPaths = ["/home/nebula/.ssh/id_ed25519"];
       };
     })
   ];
