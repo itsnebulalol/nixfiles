@@ -11,12 +11,16 @@ let
   geras_host = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILVxSXFgepyJf3LilMcmjhIDrUw9dnvs76/timPjNdGB";
   geras = [geras_user geras_host];
 
+  oizys_user = "ssh-ed25519 ";
+  oizys_host = "ssh-ed25519 ";
+  oizys = [oizys_user oizys_host];
+
   semreh_user = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBVho+KHY8MayDm1un32hZUZt6H4SsMTboEwvQzYuf5E";
   semreh_host = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOczbXpTKp8QZoOI/+5pvLYNXXpC6E2/fyZU32wWaxw6";
   semreh = [semreh_user semreh_host];
 
 in {
   "cloudflared.age".publicKeys = semreh;
-  "tailscale.age".publicKeys = arete ++ geras ++ semreh;
+  "tailscale.age".publicKeys = arete ++ geras ++ oizys ++ semreh;
   "wakatime.age".publicKeys = arete;
 }

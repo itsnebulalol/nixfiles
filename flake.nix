@@ -84,6 +84,19 @@
         };
       };
 
+      # Oracle VPS (test)
+      oizys = combinedManager.nixosSystem {
+        inherit inputs;
+        configuration = {
+          system = "x86_64-linux";
+          modules = [
+            ./modules
+            ./hosts/oizys
+            ./configs/oizys
+          ];
+        };
+      };
+
       # Raspberry Pi 4
       semreh = combinedManager.nixosSystem {
         inherit inputs;
