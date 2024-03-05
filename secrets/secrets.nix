@@ -11,6 +11,10 @@ let
   geras_host = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILVxSXFgepyJf3LilMcmjhIDrUw9dnvs76/timPjNdGB";
   geras = [geras_user geras_host];
 
+  maniae_user = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMzIyeRCkLieiuEoCGvrBQrXgp6U/WnorBnvPW/YHL9q";
+  maniae_host = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK9qC/9rOQWjFBr9EFtc05TCIcOI9m38howi6vTPizuy";
+  maniae = [maniae_user maniae_host];
+
   oizys_user = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPqkRtQeZtjoaEG8oxqALkkEedsPlvMIMNrszYTf1aiU";
   oizys_host = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII8YzwzjrPrzKHBaeOeSCRGqUJEDhaP684czaY5Gj/Nu";
   oizys = [oizys_user oizys_host];
@@ -21,6 +25,6 @@ let
 
 in {
   "cloudflared.age".publicKeys = arete ++ semreh;
-  "tailscale.age".publicKeys = arete ++ geras ++ oizys ++ semreh;
+  "tailscale.age".publicKeys = arete ++ geras ++ maniae ++ oizys ++ semreh;
   "wakatime.age".publicKeys = arete;
 }

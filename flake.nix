@@ -84,6 +84,19 @@
         };
       };
 
+      # Oracle VPS 3
+      maniae = combinedManager.nixosSystem {
+        inherit inputs;
+        configuration = {
+          system = "aarch64-linux";
+          modules = [
+            ./modules
+            ./hosts/maniae
+            ./configs/maniae
+          ];
+        };
+      };
+
       # Oracle VPS (test)
       oizys = combinedManager.nixosSystem {
         inherit inputs;

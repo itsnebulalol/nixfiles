@@ -5,6 +5,7 @@
 - Arete (MacBook Pro M1, 2020, 13")
 - Cratos (PC)
 - Geras (Old Dell Inspiron)
+- Maniae (Oracle Cloud 3)
 - Oizys (Oracle Cloud VM)
 - Semreh (Raspberry Pi 4)
 
