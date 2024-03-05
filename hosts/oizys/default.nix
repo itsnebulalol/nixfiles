@@ -1,5 +1,5 @@
 _: {
-  osModules = [./disk-configuration.nix];
+  osModules = [./hardware-configuration.nix];
 
   os = {
     nixpkgs.config.allowUnfree = true;
@@ -12,6 +12,17 @@ _: {
     networking = {
       hostName = "oizys";
       networkmanager.enable = true;
+
+      interfaces.eth0 = {
+        useDHCP = true;
+        ipv4.addresses = [{
+          address = "10.0.0.14";
+          prefixLength = 24;
+        }];
+      };
+
+      defaultGateway = "10.0.0.1";
+      nameservers = ["1.1.1.1" "1.0.0.1"];
     };
 
     console.enable = false;
