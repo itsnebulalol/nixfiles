@@ -60,17 +60,6 @@
         };
       };
 
-      # PC
-      #cratos = combinedManager.nixosSystem {
-      #  system = "x86_64-linux";
-      #  inherit inputs;
-      #  modules = [
-      #    ./modules
-      #    ./hosts/cratos
-      #    ./configs/cratos
-      #  ];
-      #};
-
       # Dell Inspiron
       geras = combinedManager.nixosSystem {
         inherit inputs;
