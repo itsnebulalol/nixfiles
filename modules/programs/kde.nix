@@ -24,7 +24,7 @@
           };
         };
 
-        environment.systemPackages = [ pkgs.plasma-rose-pine ];
+        environment.systemPackages = with pkgs; [ plasma-rose-pine remmina ];
       };
 
       hm = {

@@ -20,7 +20,7 @@ let
   semreh = [semreh_user semreh_host];
 
 in {
-  "cloudflared.age".publicKeys = semreh;
+  "cloudflared.age".publicKeys = arete ++ semreh;
   "tailscale.age".publicKeys = arete ++ geras ++ oizys ++ semreh;
   "wakatime.age".publicKeys = arete;
 }
