@@ -12,7 +12,7 @@
 
       tunnels = {
         "4978c8b8-c9fe-47b9-af50-d59921ebdde1" = {
-          credentialsFile = osConfig.age.secrets.cloudflared.path;
+          credentialsFile = osConfig.age.secrets.cloudflared-home.path;
           ingress = {
             "f.itsnebula.net" = "http://server.coin-gray.ts.net:5381";
             "ig.itsnebula.net" = "http://server.coin-gray.ts.net:2741";

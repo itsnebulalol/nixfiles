@@ -35,7 +35,7 @@
 
       tunnels = {
         "4978c8b8-c9fe-47b9-af50-d59921ebdde1" = {
-          credentialsFile = osConfig.age.secrets.cloudflared.path;
+          credentialsFile = osConfig.age.secrets.cloudflared-home.path;
           ingress = {
             "matrix.itsnebula.net" = {
               service = "http://[${osConfig.services.matrix-conduit.settings.global.address}]:${toString osConfig.services.matrix-conduit.settings.global.port}";
