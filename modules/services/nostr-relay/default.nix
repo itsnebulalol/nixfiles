@@ -3,6 +3,7 @@
   config,
   lib,
   pkgs,
+  osConfig,
   ...
 }: {
   options.services.nostr-relay.enable = lib.mkEnableOption "nostr-relay";
