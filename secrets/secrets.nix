@@ -20,7 +20,8 @@ let
   semreh = [semreh_user semreh_host];
 
 in {
-  "cloudflared.age".publicKeys = arete ++ semreh;
+  "cloudflared-home.age".publicKeys = semreh;
+  # "cloudflared-oracle2.age".publicKeys = semreh; # TODO: use for 2nd Oracle VPS
   "tailscale.age".publicKeys = arete ++ geras ++ maniae ++ oizys ++ semreh;
-  "wakatime.age".publicKeys = arete;
+  "wakatime.age".publicKeys = arete ++ semreh;
 }

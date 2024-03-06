@@ -29,5 +29,22 @@
         reverse_proxy /_matrix/* [${osConfig.services.matrix-conduit.settings.global.address}]:${toString osConfig.services.matrix-conduit.settings.global.port}
       '';
     }; */
+
+    services.cloudflared = {
+      enable = true;
+
+      tunnels = {
+        "4978c8b8-c9fe-47b9-af50-d59921ebdde1" = {
+          credentialsFile = osConfig.age.secrets.cloudflared.path;
+          ingress = {
+            "matrix.itsnebula.net" = {
+              service = "http://[${osConfig.services.matrix-conduit.settings.global.address}]:${toString osConfig.services.matrix-conduit.settings.global.port}";
+              path = "/_matrix";
+            };
+          };
+          default = "http_status:404";
+        };
+      };
+    };
   };
 }

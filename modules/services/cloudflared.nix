@@ -16,11 +16,6 @@
           ingress = {
             "f.itsnebula.net" = "http://server.coin-gray.ts.net:5381";
             "ig.itsnebula.net" = "http://server.coin-gray.ts.net:2741";
-            "nostr.itsnebula.net" = "http://127.0.0.1:4629";
-            "matrix.itsnebula.net" = {
-              service = "http://[${osConfig.services.matrix-conduit.settings.global.address}]:${toString osConfig.services.matrix-conduit.settings.global.port}";
-              path = "/_matrix";
-            };
           };
           default = "http_status:404";
         };

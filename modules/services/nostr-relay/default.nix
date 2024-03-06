@@ -52,5 +52,19 @@
         reverse_proxy 127.0.0.1:4629
       '';
     }; */
+
+    services.cloudflared = {
+      enable = true;
+
+      tunnels = {
+        "4978c8b8-c9fe-47b9-af50-d59921ebdde1" = {
+          credentialsFile = osConfig.age.secrets.cloudflared.path;
+          ingress = {
+            "nostr.itsnebula.net" = "http://127.0.0.1:4629";
+          };
+          default = "http_status:404";
+        };
+      };
+    };
   };
 }
