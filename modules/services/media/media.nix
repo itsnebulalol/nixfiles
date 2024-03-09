@@ -26,7 +26,7 @@
       };
 
       systemd.tmpfiles.rules = [
-        "d /opt/media 0770 nebula ${config.services.media.group.name} -"
+        "d /etc/media 0770 nebula ${config.services.media.group.name} -"
       ];
     };
   };

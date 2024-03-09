@@ -7,10 +7,10 @@
 
   config.os = lib.mkIf (config.services.media.enable && config.services.media.radarr.enable) {
     systemd.tmpfiles.rules = [
-      "d /opt/media/radarr 0770 nebula ${config.services.media.group.name} -"
-      "d /opt/media/radarr4k 0770 nebula ${config.services.media.group.name} -"
-      "d /opt/media/radarr4kdv 0770 nebula ${config.services.media.group.name} -"
-      "d /opt/media/radarrextra 0770 nebula ${config.services.media.group.name} -"
+      "d /etc/media/radarr 0770 nebula ${config.services.media.group.name} -"
+      "d /etc/media/radarr4k 0770 nebula ${config.services.media.group.name} -"
+      "d /etc/media/radarr4kdv 0770 nebula ${config.services.media.group.name} -"
+      "d /etc/media/radarrextra 0770 nebula ${config.services.media.group.name} -"
     ];
 
     virtualisation.arion.projects.media.settings.services = {
@@ -23,7 +23,7 @@
           ports = [ "9003:7878" ];
           volumes = [
             "/mnt:/mnt"
-            "/opt/media/radarr:/config"
+            "/etc/media/radarr:/config"
           ];
           environment = {
             TZ = "America/New_York";
@@ -46,7 +46,7 @@
           ports = [ "9103:7878" ];
           volumes = [
             "/mnt:/mnt"
-            "/opt/media/radarr4k:/config"
+            "/etc/media/radarr4k:/config"
           ];
           environment = {
             TZ = "America/New_York";
@@ -69,7 +69,7 @@
           ports = [ "9203:7878" ];
           volumes = [
             "/mnt:/mnt"
-            "/opt/media/radarr4kdv:/config"
+            "/etc/media/radarr4kdv:/config"
           ];
           environment = {
             TZ = "America/New_York";
@@ -92,7 +92,7 @@
           ports = [ "9303:7878" ];
           volumes = [
             "/mnt:/mnt"
-            "/opt/media/radarrextra:/config"
+            "/etc/media/radarrextra:/config"
           ];
           environment = {
             TZ = "America/New_York";

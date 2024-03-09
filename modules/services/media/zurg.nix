@@ -14,8 +14,8 @@
           healthcheck.test = "curl -f localhost:9999/dav/version.txt || exit 1";
           ports = [ "9999:9999" ];
           volumes = [
-            "/opt/media/zurg/config.yml:/app/config.yml"
-            "/opt/media/zurg/data:/app/data"
+            "/etc/media/zurg/config.yml:/app/config.yml"
+            "/etc/media/zurg/data:/app/data"
           ];
           environment = {
             TZ = "America/New_York";
@@ -44,7 +44,7 @@
           devices = [ "/dev/fuse:/dev/fuse:rwm" ];
           volumes = [
             "/mnt/remote/realdebrid:/data:rshared"
-            "/opt/media/rclone/rclone.conf:/config/rclone/rclone.conf"
+            "/etc/media/rclone/rclone.conf:/config/rclone/rclone.conf"
             "/mnt:/mnt"
           ];
           environment = {

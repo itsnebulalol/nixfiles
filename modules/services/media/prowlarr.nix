@@ -31,7 +31,7 @@
           container_name = "prowlarr";
           ports = [ "9002:9696" ];
           volumes = [
-            "/opt/media/prowlarr:/config"
+            "/etc/media/prowlarr:/config"
           ];
           environment = {
             TZ = "America/New_York";

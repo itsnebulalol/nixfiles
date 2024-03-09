@@ -7,10 +7,10 @@
 
   config.os = lib.mkIf (config.services.media.enable && config.services.media.sonarr.enable) {
     systemd.tmpfiles.rules = [
-      "d /opt/media/sonarr 0770 nebula ${config.services.media.group.name} -"
-      "d /opt/media/sonarr4k 0770 nebula ${config.services.media.group.name} -"
-      "d /opt/media/sonarr4kdv 0770 nebula ${config.services.media.group.name} -"
-      "d /opt/media/sonarrextra 0770 nebula ${config.services.media.group.name} -"
+      "d /etc/media/sonarr 0770 nebula ${config.services.media.group.name} -"
+      "d /etc/media/sonarr4k 0770 nebula ${config.services.media.group.name} -"
+      "d /etc/media/sonarr4kdv 0770 nebula ${config.services.media.group.name} -"
+      "d /etc/media/sonarrextra 0770 nebula ${config.services.media.group.name} -"
     ];
 
     virtualisation.arion.projects.media.settings.services = {
@@ -23,7 +23,7 @@
           ports = [ "9004:8989" ];
           volumes = [
             "/mnt:/mnt"
-            "/opt/media/sonarr:/config"
+            "/etc/media/sonarr:/config"
           ];
           environment = {
             TZ = "America/New_York";
@@ -46,7 +46,7 @@
           ports = [ "9104:8989" ];
           volumes = [
             "/mnt:/mnt"
-            "/opt/media/sonarr4k:/config"
+            "/etc/media/sonarr4k:/config"
           ];
           environment = {
             TZ = "America/New_York";
@@ -69,7 +69,7 @@
           ports = [ "9204:8989" ];
           volumes = [
             "/mnt:/mnt"
-            "/opt/media/sonarr4kdv:/config"
+            "/etc/media/sonarr4kdv:/config"
           ];
           environment = {
             TZ = "America/New_York";
@@ -92,7 +92,7 @@
           ports = [ "9304:8989" ];
           volumes = [
             "/mnt:/mnt"
-            "/opt/media/sonarrextra:/config"
+            "/etc/media/sonarrextra:/config"
           ];
           environment = {
             TZ = "America/New_York";
