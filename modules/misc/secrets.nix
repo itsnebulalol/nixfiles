@@ -25,7 +25,7 @@ in {
       os = {
         age.secrets = lib.mkMerge [
           (secretForHostnames ["semreh"] ../../secrets/cloudflared-home.age "cloudflared-home" { owner = "cloudflared"; })
-          (secretForHostnames ["arete" "geras" "mainae" "oizys" "semreh"] ../../secrets/tailscale.age "tailscale" {})
+          (secretForHostnames ["arete" "geras" "mainae" "oizys" "poseidon" "semreh"] ../../secrets/tailscale.age "tailscale" {})
         ];
         environment.systemPackages = [inputs.agenix.packages.${pkgs.system}.default];
       };

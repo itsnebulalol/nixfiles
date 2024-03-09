@@ -4,6 +4,7 @@
   inputs = {
     agenix.url = "github:ryantm/agenix";
     apple-silicon-support.url = "github:tpwrules/nixos-apple-silicon";
+    arion.url = "github:hercules-ci/arion";
     conduit.url = "gitlab:famedly/conduit/next";
     nix-super.url = "github:privatevoid-net/nix-super";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -95,6 +96,19 @@
             ./modules
             ./hosts/oizys
             ./configs/oizys
+          ];
+        };
+      };
+
+      # Oracle VPS 2
+      poseidon = combinedManager.nixosSystem {
+        inherit inputs;
+        configuration = {
+          system = "aarch64-linux";
+          modules = [
+            ./modules
+            ./hosts/poseidon
+            ./configs/poseidon
           ];
         };
       };
