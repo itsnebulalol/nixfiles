@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  inputs,
   ...
 }: {
   options.services.media.enable = lib.mkEnableOption "mediaserver";
@@ -27,6 +28,7 @@
 
       systemd.tmpfiles.rules = [
         "d /etc/media 0770 nebula ${config.services.media.group.name} -"
+        "d /mnt 0770 nebula ${config.services.media.group.name} -"
       ];
     };
   };

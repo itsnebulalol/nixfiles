@@ -25,7 +25,7 @@ let
 
 in {
   "cloudflared-home.age".publicKeys = semreh;
-  # "cloudflared-oracle2.age".publicKeys = semreh; # TODO: use for 2nd Oracle VPS
+  "cloudflared-media.age".publicKeys = poseidon ++ semreh;
   "tailscale.age".publicKeys = arete ++ geras ++ maniae ++ oizys ++ poseidon ++ semreh;
   "wakatime.age".publicKeys = arete ++ semreh;
 }

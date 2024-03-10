@@ -1,11 +1,20 @@
 {
   config,
   lib,
+  osConfig,
   ...
 }: {
   options.services.media.zurg.enable = lib.mkEnableOption "Zurg" // {default = config.services.media.enable;};
 
   config.os = lib.mkIf (config.services.media.enable && config.services.media.zurg.enable) {
+    systemd.tmpfiles.rules = [
+      "d /etc/media/zurg 0770 nebula ${config.services.media.group.name} -"
+      "d /etc/media/rclone 0770 nebula ${config.services.media.group.name} -"
+    ];
+
+    environment.etc."media/zurg/config.yml".source = pkgs.subsitituteAll ({ src = ./config.yml; rdApi = builtins.readFile osConfig.age.secrets.rd_token.path; });
+    environment.etc."media/rclone/rclone.conf".source = ./rclone.conf;
+
     virtualisation.arion.projects.media.settings.services = {
       zurg = {
         service = {

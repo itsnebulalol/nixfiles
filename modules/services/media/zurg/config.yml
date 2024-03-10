@@ -1,0 +1,41 @@
+# Zurg configuration version
+zurg: v1
+token: "@rdApi@"
+host: "[::]"
+port: 9999
+concurrent_workers: 32
+check_for_changes_every_secs: 10
+ignore_renames: true
+retain_rd_torrent_name: false
+retain_folder_name_extension: false
+enable_repair: true
+auto_delete_rar_torrents: false
+get_torrents_count: 5000
+
+preferred_hosts:
+  - 63.download.real-debrid.com # hops: 11 latency: 19.349ms
+  - 58.download.real-debrid.com # hops: 10 latency: 19.439ms
+  - 52.download.real-debrid.cloud # hops: 10 latency: 19.553ms
+  - 64.download.real-debrid.cloud # hops: 11 latency: 19.71ms
+  - 63.download.real-debrid.cloud # hops: 11 latency: 19.724ms
+  - 32.download.real-debrid.com # hops: 10 latency: 19.739ms
+  - 50.download.real-debrid.cloud # hops: 10 latency: 19.75ms
+  - 62.download.real-debrid.cloud # hops: 11 latency: 19.769ms
+  - 59.download.real-debrid.com # hops: 10 latency: 19.809ms
+  - 23.download.real-debrid.cloud # hops: 10 latency: 19.853ms
+  - 53.download.real-debrid.com # hops: 11 latency: 19.867ms
+  - 60.download.real-debrid.com # hops: 10 latency: 19.869ms
+  - 45.download.real-debrid.cloud # hops: 10 latency: 19.871ms
+  - 61.download.real-debrid.com # hops: 10 latency: 19.873ms
+  - 66.download.real-debrid.cloud # hops: 10 latency: 19.874ms
+  - 64.download.real-debrid.com # hops: 10 latency: 19.879ms
+  - 20.download.real-debrid.cloud # hops: 10 latency: 19.891ms
+  - 51.download.real-debrid.cloud # hops: 10 latency: 19.892ms
+  - 53.download.real-debrid.cloud # hops: 11 latency: 19.908ms
+  - 30.download.real-debrid.cloud # hops: 10 latency: 19.915ms
+
+directories:
+  torrents:
+    group: 1
+    filters:
+      - regex: /.*/
