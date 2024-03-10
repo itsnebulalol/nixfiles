@@ -11,6 +11,16 @@
       "d /etc/media/radarr4k 0770 nebula ${config.services.media.group.name} -"
       "d /etc/media/radarr4kdv 0770 nebula ${config.services.media.group.name} -"
       "d /etc/media/radarrextra 0770 nebula ${config.services.media.group.name} -"
+
+      "d /mnt/symlinks/radarr 0770 nebula ${config.services.media.group.name} -"
+      "d /mnt/symlinks/radarr4k 0770 nebula ${config.services.media.group.name} -"
+      "d /mnt/symlinks/radarr4kdv 0770 nebula ${config.services.media.group.name} -"
+      "d /mnt/symlinks/radarrextra 0770 nebula ${config.services.media.group.name} -"
+
+      "d /mnt/libraries/movies 0770 nebula ${config.services.media.group.name} -"
+      "d /mnt/libraries/movies4k 0770 nebula ${config.services.media.group.name} -"
+      "d /mnt/libraries/movies4kdv 0770 nebula ${config.services.media.group.name} -"
+      "d /mnt/libraries/moviesextra 0770 nebula ${config.services.media.group.name} -"
     ];
 
     virtualisation.arion.projects.media.settings.services = {

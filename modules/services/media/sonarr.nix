@@ -11,6 +11,16 @@
       "d /etc/media/sonarr4k 0770 nebula ${config.services.media.group.name} -"
       "d /etc/media/sonarr4kdv 0770 nebula ${config.services.media.group.name} -"
       "d /etc/media/sonarrextra 0770 nebula ${config.services.media.group.name} -"
+
+      "d /mnt/symlinks/sonarr 0770 nebula ${config.services.media.group.name} -"
+      "d /mnt/symlinks/sonarr4k 0770 nebula ${config.services.media.group.name} -"
+      "d /mnt/symlinks/sonarr4kdv 0770 nebula ${config.services.media.group.name} -"
+      "d /mnt/symlinks/sonarrextra 0770 nebula ${config.services.media.group.name} -"
+
+      "d /mnt/libraries/tv 0770 nebula ${config.services.media.group.name} -"
+      "d /mnt/libraries/tv4k 0770 nebula ${config.services.media.group.name} -"
+      "d /mnt/libraries/tv4kdv 0770 nebula ${config.services.media.group.name} -"
+      "d /mnt/libraries/tvextra 0770 nebula ${config.services.media.group.name} -"
     ];
 
     virtualisation.arion.projects.media.settings.services = {

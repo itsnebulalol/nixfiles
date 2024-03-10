@@ -30,7 +30,10 @@
 
       systemd.tmpfiles.rules = [
         "d /etc/media 0770 nebula ${config.services.media.group.name} -"
+
         "d /mnt 0770 nebula ${config.services.media.group.name} -"
+        "d /mnt/symlinks 0770 nebula ${config.services.media.group.name} -"
+        "d /mnt/libraries 0770 nebula ${config.services.media.group.name} -"
       ];
     };
   };
