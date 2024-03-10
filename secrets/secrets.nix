@@ -26,6 +26,7 @@ let
 in {
   "cloudflared-home.age".publicKeys = semreh;
   "cloudflared-media.age".publicKeys = poseidon ++ semreh;
+  "rd_token.age".publicKeys = poseidon ++ semreh;
   "tailscale.age".publicKeys = arete ++ geras ++ maniae ++ oizys ++ poseidon ++ semreh;
   "wakatime.age".publicKeys = arete ++ semreh;
 }

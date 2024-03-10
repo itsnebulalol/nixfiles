@@ -19,7 +19,7 @@
         service = {
           image = "ghcr.io/hotio/radarr:release";
           container_name = "radarr";
-          depends_on = [{ name = "rclone"; condition = "service_healthy"; }];
+          depends_on = ["rclone"];
           ports = [ "9003:7878" ];
           volumes = [
             "/mnt:/mnt"
@@ -28,7 +28,7 @@
           environment = {
             TZ = "America/New_York";
             PUID = "1000";
-            PGID = "${config.services.media.group.gid}";
+            PGID = "1337";
           };
           restart = "unless-stopped";
         };
@@ -40,7 +40,7 @@
           image = "ghcr.io/hotio/radarr:release";
           container_name = "radarr4k";
           depends_on = [
-            { name = "rclone"; condition = "service_healthy"; }
+            "rclone"
             "radarr"
           ];
           ports = [ "9103:7878" ];
@@ -51,7 +51,7 @@
           environment = {
             TZ = "America/New_York";
             PUID = "1000";
-            PGID = "${config.services.media.group.gid}";
+            PGID = "1337";
           };
           restart = "unless-stopped";
         };
@@ -63,7 +63,7 @@
           image = "ghcr.io/hotio/radarr:release";
           container_name = "radarr4kdv";
           depends_on = [
-            { name = "rclone"; condition = "service_healthy"; }
+            "rclone"
             "radarr"
           ];
           ports = [ "9203:7878" ];
@@ -74,7 +74,7 @@
           environment = {
             TZ = "America/New_York";
             PUID = "1000";
-            PGID = "${config.services.media.group.gid}";
+            PGID = "1337";
           };
           restart = "unless-stopped";
         };
@@ -86,7 +86,7 @@
           image = "ghcr.io/hotio/radarr:release";
           container_name = "radarrextra";
           depends_on = [
-            { name = "rclone"; condition = "service_healthy"; }
+            "rclone"
             "radarr"
           ];
           ports = [ "9303:7878" ];
@@ -97,7 +97,7 @@
           environment = {
             TZ = "America/New_York";
             PUID = "1000";
-            PGID = "${config.services.media.group.gid}";
+            PGID = "1337";
           };
           restart = "unless-stopped";
         };

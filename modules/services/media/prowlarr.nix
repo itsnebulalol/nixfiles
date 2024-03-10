@@ -15,7 +15,7 @@
           environment = {
             TZ = "America/New_York";
             PUID = "1000";
-            PGID = "${config.services.media.group.gid}";
+            PGID = "1337";
 
             LOG_LEVEL = "info";
             LOG_HTML = "false";
@@ -36,7 +36,7 @@
           environment = {
             TZ = "America/New_York";
             PUID = "1000";
-            PGID = "${config.services.media.group.gid}";
+            PGID = "1337";
           };
           restart = "unless-stopped";
         };

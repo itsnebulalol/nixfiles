@@ -21,6 +21,8 @@
 
     os = {
       virtualisation.arion.backend = "docker";
+      virtualisation.docker.enable = true;
+      users.users.nebula.extraGroups = [ "docker" ];
 
       users.groups."${config.services.media.group.name}" = {
         inherit (config.services.media.group) gid;

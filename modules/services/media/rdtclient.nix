@@ -13,9 +13,9 @@
     virtualisation.arion.projects.media.settings.services = {
       rdtclient = {
         service = {
-          image = "ghcr.io/itsnebulalol/rdtclient:master";
+          image = "docker.io/itsnebulalol/rdtclient:master";
           container_name = "rdtclient";
-          depends_on = [{ name = "rclone"; condition = "service_healthy"; }];
+          depends_on = ["rclone"];
           ports = [ "9001:6500" ];
           volumes = [
             "/etc/localtime:/etc/localtime:ro"
@@ -26,7 +26,7 @@
           environment = {
             TZ = "America/New_York";
             PUID = "1000";
-            PGID = "${config.services.media.group.gid}";
+            PGID = "1337";
           };
           restart = "unless-stopped";
         };

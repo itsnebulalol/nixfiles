@@ -8,8 +8,6 @@
 
   services = {
     tailscale.enable = true;
-    # media = {
-    #   enable = true;
-    # };
+    media.enable = true;
   };
 }
