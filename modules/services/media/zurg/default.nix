@@ -13,7 +13,7 @@
       "d /etc/media/rclone 0770 nebula ${config.services.media.group.name} -"
     ];
 
-    #environment.etc."media/zurg/config.yml".source = pkgs.substituteAll ({ src = ./config.yml; rdApi = builtins.readFile osConfig.age.secrets.rd_token.path; });
+    environment.etc."media/zurg/config.yml".source = osConfig.age.secrets.rd_conf.path;
     environment.etc."media/rclone/rclone.conf".source = ./rclone.conf;
 
     virtualisation.arion.projects.media.settings.services = {

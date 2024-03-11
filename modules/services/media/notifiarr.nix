@@ -15,6 +15,7 @@
         service = {
           image = "docker.io/golift/notifiarr";
           container_name = "notifiarr";
+          hostname = "notifiarr";
           ports = [ "5454:5454" ];
           volumes = [
             "/etc/media/notifiarr:/config"
