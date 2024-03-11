@@ -119,18 +119,22 @@
       virtualHosts = {
         "radarr.ms.itsnebula.net".extraConfig = ''
           reverse_proxy 127.0.0.1:9003
+          import cloudflare
         '';
 
         "radarr4k.ms.itsnebula.net".extraConfig = ''
           reverse_proxy 127.0.0.1:9103
+          import cloudflare
         '';
 
         "radarr4kdv.ms.itsnebula.net".extraConfig = ''
           reverse_proxy 127.0.0.1:9203
+          import cloudflare
         '';
 
         "radarrextra.ms.itsnebula.net".extraConfig = ''
           reverse_proxy 127.0.0.1:9303
+          import cloudflare
         '';
       };
     };

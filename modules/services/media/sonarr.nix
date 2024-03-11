@@ -119,18 +119,22 @@
       virtualHosts = {
         "sonarr.ms.itsnebula.net".extraConfig = ''
           reverse_proxy 127.0.0.1:9004
+          import cloudflare
         '';
 
         "sonarr4k.ms.itsnebula.net".extraConfig = ''
           reverse_proxy 127.0.0.1:9104
+          import cloudflare
         '';
 
         "sonarr4kdv.ms.itsnebula.net".extraConfig = ''
           reverse_proxy 127.0.0.1:9204
+          import cloudflare
         '';
 
         "sonarrextra.ms.itsnebula.net".extraConfig = ''
           reverse_proxy 127.0.0.1:9304
+          import cloudflare
         '';
       };
     };

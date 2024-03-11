@@ -24,6 +24,7 @@ let
   semreh = [semreh_user semreh_host];
 
 in {
+  "caddy-cloudflare.age".publicKeys = poseidon ++ semreh;
   "cloudflared-home.age".publicKeys = semreh;
   "cloudflared-media.age".publicKeys = poseidon ++ semreh;
   "rd_conf.age".publicKeys = poseidon ++ semreh;
