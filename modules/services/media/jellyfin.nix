@@ -39,5 +39,19 @@
         };
       };
     };
+
+    services.cloudflared = {
+      enable = true;
+      tunnels = {
+        "6d34d7bd-8df4-4e28-9f06-b0674d0408dc" = {
+          credentialsFile = osConfig.age.secrets.cloudflared-media.path;
+          ingress = {
+            "jellyfin.itsnebula.net" = "http://127.0.0.1:8096";
+            "privaterequests.itsnebula.net" = "http://127.0.0.1:9008";
+          };
+          default = "http_status:404";
+        };
+      };
+    };
   };
 }

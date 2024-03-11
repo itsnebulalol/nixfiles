@@ -113,5 +113,26 @@
         };
       };
     };
+
+    services.caddy = {
+      enable = true;
+      virtualHosts = {
+        "radarr.ms.itsnebula.net".extraConfig = ''
+          reverse_proxy 127.0.0.1:9003
+        '';
+
+        "radarr4k.ms.itsnebula.net".extraConfig = ''
+          reverse_proxy 127.0.0.1:9103
+        '';
+
+        "radarr4kdv.ms.itsnebula.net".extraConfig = ''
+          reverse_proxy 127.0.0.1:9203
+        '';
+
+        "radarrextra.ms.itsnebula.net".extraConfig = ''
+          reverse_proxy 127.0.0.1:9303
+        '';
+      };
+    };
   };
 }
