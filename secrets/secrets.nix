@@ -30,4 +30,5 @@ in {
   "rd_conf.age".publicKeys = poseidon ++ semreh;
   "tailscale.age".publicKeys = arete ++ geras ++ maniae ++ oizys ++ poseidon ++ semreh;
   "wakatime.age".publicKeys = arete ++ semreh;
+  "wg-home.age".publicKeys = poseidon ++ semreh;
 }
