@@ -36,6 +36,8 @@
         "d /mnt 0770 nebula ${config.services.media.group.name} -"
         "d /mnt/symlinks 0770 nebula ${config.services.media.group.name} -"
         "d /mnt/libraries 0770 nebula ${config.services.media.group.name} -"
+        "d /mnt/local 0770 nebula ${config.services.media.group.name} -"
+        "d /mnt/local/transcodes 0770 nebula ${config.services.media.group.name} -"
       ];
 
       networking.firewall.allowedTCPPorts = [80 443];

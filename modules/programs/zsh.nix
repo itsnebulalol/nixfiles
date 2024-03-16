@@ -42,9 +42,9 @@
 
       programs.eza = {
         enable = true;
-        enableAliases = false;
         icons = true;
         git = true;
+        enableZshIntegration = false;
       };
 
       programs.direnv = {
