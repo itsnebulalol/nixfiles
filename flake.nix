@@ -5,7 +5,7 @@
     agenix.url = "github:ryantm/agenix";
     apple-silicon-support.url = "github:tpwrules/nixos-apple-silicon";
     arion.url = "github:hercules-ci/arion";
-    conduit.url = "gitlab:famedly/conduit/next";
+    conduwuit.url = "github:girlbossceo/conduwuit";
     nix-super.url = "github:privatevoid-net/nix-super";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
