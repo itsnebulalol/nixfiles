@@ -41,6 +41,16 @@ _: {
       root.openssh.authorizedKeys.keys = keys;
     };
 
+    systemd.tmpfiles.rules = [
+      "d /mnt/music 0770 nebula users -"
+    ];
+
+    fileSystems."/mnt/music" = {
+      device = "nebula@server:/home/nebula/Music";
+      fsType = "fuse.sshfs";
+      options = ["allow_other" "_netdev" "default_permissions" "user" "idmap=user" "identityfile=/home/nebula/.ssh/id_ed25519" "uid=1000" "gid=100"];
+    };
+
     time.timeZone = "America/New_York";
 
     hardware.enableRedistributableFirmware = true;
