@@ -30,6 +30,6 @@ in {
     ];
 
     xdg.configFile."vesktop/settings.json".source = ./vesktop.json;
-    xdg.configFile."vesktop/settings/settings.json".source = ./vendetta.json;
+    xdg.configFile."vesktop/settings/settings.json".source = ./vencord.json;
   };
 }
