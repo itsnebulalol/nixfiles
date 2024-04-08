@@ -9,5 +9,6 @@
     ripgrep
     neofetch
     sshfs
+    clang
   ];
 }

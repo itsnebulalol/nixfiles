@@ -27,6 +27,7 @@
           ls = "eza -aF";
           la = "eza -laF";
           nswitch = config.rebuildCommand;
+          nv = "nvim";
         };
 
         zplug = {
