@@ -28,7 +28,7 @@ in {
           (secretForHostnames ["semreh"] ../../secrets/cloudflared-home.age "cloudflared-home" { owner = "cloudflared"; })
           (secretForHostnames ["poseidon" "semreh"] ../../secrets/cloudflared-media.age "cloudflared-media" { owner = "cloudflared"; })
           (secretForHostnames ["poseidon" "semreh"] ../../secrets/rd_conf.age "rd_conf" {})
-          (secretForHostnames ["arete" "geras" "mainae" "oizys" "poseidon" "semreh"] ../../secrets/tailscale.age "tailscale" {})
+          (secretForHostnames ["arete" "geras" "maniae" "oizys" "poseidon" "semreh"] ../../secrets/tailscale.age "tailscale" {})
           (secretForHostnames ["poseidon" "semreh"] ../../secrets/wg-home.age "wg-home" {})
         ];
         environment.systemPackages = [inputs.agenix.packages.${pkgs.system}.default];
