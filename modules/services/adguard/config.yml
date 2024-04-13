@@ -1,0 +1,307 @@
+http:
+  pprof:
+    port: 6060
+    enabled: false
+  address: 0.0.0.0:3000
+  session_ttl: 720h
+users:
+  - name: nebula
+    password: $2a$10$NdeMDqiQy4CSNxZuOUZP3Om4Qs9PSHSjObmA6NfJTEDAiZ3J07D/2
+auth_attempts: 5
+block_auth_min: 15
+http_proxy: ""
+language: ""
+theme: auto
+dns:
+  bind_hosts:
+    - 0.0.0.0
+  port: 53
+  anonymize_client_ip: false
+  ratelimit: 20
+  ratelimit_subnet_len_ipv4: 24
+  ratelimit_subnet_len_ipv6: 56
+  ratelimit_whitelist: []
+  refuse_any: true
+  upstream_dns:
+    - 'tls://1.1.1.1'
+    - 'quic://unfiltered.adguard-dns.com'
+    - '#127.0.0.1:5053'
+  upstream_dns_file: ""
+  bootstrap_dns:
+    - 1.0.0.1
+  fallback_dns: []
+  upstream_mode: parallel
+  fastest_timeout: 1s
+  allowed_clients: []
+  disallowed_clients:
+    - 183.136.225.0/24
+    - 101.68.211.2
+    - 177.37.222.0/24
+    - 206.42.24.0/24
+    - 187.19.172.0/24
+    - 177.37.227.0/24
+    - 187.19.133.0/24
+    - 206.42.22.0/24
+  blocked_hosts:
+    - version.bind
+    - id.server
+    - hostname.bind
+  trusted_proxies:
+    - 127.0.0.0/8
+    - ::1/128
+  cache_size: 0
+  cache_ttl_min: 0
+  cache_ttl_max: 0
+  cache_optimistic: false
+  bogus_nxdomain: []
+  aaaa_disabled: false
+  enable_dnssec: true
+  edns_client_subnet:
+    custom_ip: ""
+    enabled: true
+    use_custom: false
+  max_goroutines: 300
+  handle_ddr: true
+  ipset: []
+  ipset_file: ""
+  bootstrap_prefer_ipv6: false
+  upstream_timeout: 10s
+  private_networks: []
+  use_private_ptr_resolvers: true
+  local_ptr_upstreams: []
+  use_dns64: false
+  dns64_prefixes: []
+  serve_http3: false
+  use_http3_upstreams: false
+  serve_plain_dns: true
+tls:
+  enabled: false
+  server_name: ""
+  force_https: false
+  port_https: 443
+  port_dns_over_tls: 853
+  port_dns_over_quic: 853
+  port_dnscrypt: 0
+  dnscrypt_config_file: ""
+  allow_unencrypted_doh: false
+  certificate_chain: ""
+  private_key: ""
+  certificate_path: ""
+  private_key_path: ""
+  strict_sni_check: false
+querylog:
+  ignored: []
+  interval: 24h
+  size_memory: 1000
+  enabled: true
+  file_enabled: true
+statistics:
+  ignored:
+    - i.ytimg.com
+    - postgres
+  interval: 2160h
+  enabled: true
+filters:
+  - enabled: true
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_2.txt
+    name: AdAway Default Blocklist
+    id: 2
+  - enabled: true
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_32.txt
+    name: The NoTracking blocklist
+    id: 1673048198
+  - enabled: true
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_4.txt
+    name: Dan Pollock's List
+    id: 1673048199
+  - enabled: true
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_3.txt
+    name: Peter Lowe's Blocklist
+    id: 1673048200
+  - enabled: true
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_6.txt
+    name: Dandelion Sprout's Game Console Adblock List
+    id: 1673048204
+  - enabled: true
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_23.txt
+    name: WindowsSpyBlocker - Hosts spy rules
+    id: 1673048205
+  - enabled: true
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_12.txt
+    name: Dandelion Sprout's Anti-Malware List
+    id: 1673048210
+  - enabled: true
+    url: https://big.oisd.nl
+    name: oisd
+    id: 1673048219
+  - enabled: true
+    url: https://cdn.jsdelivr.net/gh/badmojr/1Hosts@master/Lite/adblock.txt
+    name: 1Hosts
+    id: 1673048220
+  - enabled: true
+    url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.txt
+    name: Hagezi Multi PRO
+    id: 1691355625
+  - enabled: true
+    url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.amazon.txt
+    name: Hagezi Amazon
+    id: 1691355626
+  - enabled: true
+    url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.apple.txt
+    name: Hagezi Apple
+    id: 1691355627
+  - enabled: true
+    url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.winoffice.txt
+    name: Hagezi Microsoft
+    id: 1691355628
+  - enabled: true
+    url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.tiktok.txt
+    name: Hagezi TikTok
+    id: 1691355629
+  - enabled: true
+    url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.txt
+    name: Hagezi TIF
+    id: 1691355630
+whitelist_filters:
+  - enabled: true
+    url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/whitelist-referral.txt
+    name: Hagezi Referral Whitelist
+    id: 1691355632
+  - enabled: true
+    url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/whitelist-urlshortener.txt
+    name: Hagezi URL Shortener Whitelist
+    id: 1705357632
+user_rules:
+  - '||analyticsengine.s3.amazonaws.com^$important'
+  - '||affiliationjs.s3.amazonaws.com^$important'
+  - '||metrics.mzstatic.com^$important'
+  - '||edge.activity.windows.com^$important'
+  - '||advice-ads.s3.amazonaws.com^$important'
+  - '||google-analytics.com^$important'
+  - '||adservice.google.com^$important'
+  - '||hotjar.com^$important'
+  - '||static.hotjar.com^$important'
+  - '||api-hotjar.com^$important'
+  - '||hotjar-analytics.com^$important'
+  - '||mouseflow.com^$important'
+  - '||a.mouseflow.com^$important'
+  - '||freshmarketer.com^$important'
+  - '||luckyorange.com^$important'
+  - '||cdn.luckyorange.com^$important'
+  - '||w1.luckyorange.com^$important'
+  - '||upload.luckyorange.net^$important'
+  - '||cs.luckyorange.net^$important'
+  - '||settings.luckyorange.net^$important'
+  - '||stats.wp.com^$important'
+  - '||notify.bugsnag.com^$important'
+  - '||sessions.bugsnag.com^$important'
+  - '||api.bugsnag.com^$important'
+  - '||app.bugsnag.com^$important'
+  - '||browser.sentry-cdn.com^$important'
+  - '||app.getsentry.com^$important'
+  - '||analytics.oneplus.cn^$important'
+  - '||click.oneplus.cn^$important'
+  - '||click.oneplus.com^$important'
+  - '||open.oneplus.net^$important'
+  - '||smetrics.samsung.com^$important'
+  - '||nmetrics.samsung.com^$important'
+  - '||analytics.samsungknox.com^$important'
+  - '||bigdata.ssp.samsung.com^$important'
+  - '||analytics-api.samsunghealthcn.com^$important'
+  - '||metrics.apple.com^$important'
+  - '||securemetrics.apple.com^$important'
+  - '||supportmetrics.apple.com^$important'
+  - '||metrics.icloud.com^$important'
+  - '||metrics.mzstatic.com^$important'
+  - '@@||rakuten.com^$important'
+  - '||baidu.com^$important'
+  - '@@||opensea.io^'
+  - '@@||cdn.nickchan.lol^$important'
+  - '@@||palecursus.nickchan.lol^$important'
+  - '@@||bjswholesaleclubinc.data.adobedc.net^$important'
+  - '@@||bjs-gw.ms.tagdelivery.com^$important'
+  - '@@||frcoal.cfd^$important'
+  - '@@||md-block.verou.me^$important'
+  - '@@||(.|^)hulustream.com^$important'
+  - '@@||(.|^)conviva.com^$important'
+  - '||appmetrica.yandex.ru^$important'
+  - '@@||umami.is^$important'
+  - '@@||paramountplus.com^$important'
+  - '@@||paramountplus.com.data.adobedc.net^$important'
+  - '@@||ads.google.com^$important'
+  - '@@||aka-cdn.adtechus.com^$important'
+  - '@@||tracking.overwolf.com^$important'
+  - '@@||sdk-cdn.optimove.net^$important'
+  - '@@||checkmyip.torrentprivacy.com^$important'
+  - '||tvpnlogopus.samsungcloud.tv^$important'
+dhcp:
+  enabled: false
+  interface_name: ""
+  local_domain_name: lan
+  dhcpv4:
+    gateway_ip: ""
+    subnet_mask: ""
+    range_start: ""
+    range_end: ""
+    lease_duration: 86400
+    icmp_timeout_msec: 1000
+    options: []
+  dhcpv6:
+    range_start: ""
+    lease_duration: 86400
+    ra_slaac_only: false
+    ra_allow_slaac: false
+filtering:
+  blocking_ipv4: ""
+  blocking_ipv6: ""
+  blocked_services:
+    schedule:
+      time_zone: Local
+    ids: []
+  protection_disabled_until: null
+  safe_search:
+    enabled: false
+    bing: true
+    duckduckgo: true
+    google: true
+    pixabay: true
+    yandex: true
+    youtube: true
+  blocking_mode: default
+  parental_block_host: family-block.dns.adguard.com
+  safebrowsing_block_host: standard-block.dns.adguard.com
+  rewrites:
+    - domain: s.optifine.net
+      answer: 23.95.137.176
+  safebrowsing_cache_size: 1048576
+  safesearch_cache_size: 1048576
+  parental_cache_size: 1048576
+  cache_time: 30
+  filters_update_interval: 24
+  blocked_response_ttl: 10
+  filtering_enabled: true
+  parental_enabled: false
+  safebrowsing_enabled: false
+  protection_enabled: true
+clients:
+  runtime_sources:
+    whois: true
+    arp: true
+    rdns: true
+    dhcp: true
+    hosts: true
+  persistent: []
+log:
+  file: ""
+  max_backups: 0
+  max_size: 100
+  max_age: 3
+  compress: false
+  local_time: false
+  verbose: false
+os:
+  group: ""
+  user: ""
+  rlimit_nofile: 0
+schema_version: 28
+
