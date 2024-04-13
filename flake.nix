@@ -1,5 +1,5 @@
 {
-  description = "Nebulas's NixOS config flake";
+  description = "Nebula's NixOS config flake";
 
   inputs = {
     agenix.url = "github:ryantm/agenix";

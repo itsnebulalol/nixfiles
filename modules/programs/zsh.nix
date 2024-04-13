@@ -27,7 +27,7 @@
           ls = "eza -aF";
           la = "eza -laF";
           nswitch = config.rebuildCommand;
-          nv = "nvim";
+          nupdate = "cd $FLAKE && git pull && nix flake update && ${config.rebuildCommand} && cd -";
         };
 
         zplug = {
