@@ -25,92 +25,84 @@
 
     virtualisation.arion.projects.media.settings.services = {
       # HD
-      radarr = {
-        service = {
-          image = "ghcr.io/hotio/radarr:release";
-          container_name = "radarr";
-          depends_on = ["rclone"];
-          ports = [ "9003:7878" ];
-          volumes = [
-            "/mnt:/mnt"
-            "/etc/media/radarr:/config"
-          ];
-          environment = {
-            TZ = "America/New_York";
-            PUID = "1000";
-            PGID = "1337";
-          };
-          restart = "unless-stopped";
+      radarr.service = {
+        image = "ghcr.io/hotio/radarr:release";
+        container_name = "radarr";
+        depends_on = ["rclone"];
+        ports = [ "9003:7878" ];
+        volumes = [
+          "/mnt:/mnt"
+          "/etc/media/radarr:/config"
+        ];
+        environment = {
+          TZ = "America/New_York";
+          PUID = "1000";
+          PGID = "1337";
         };
+        restart = "unless-stopped";
       };
 
       # 4K
-      radarr4k = {
-        service = {
-          image = "ghcr.io/hotio/radarr:release";
-          container_name = "radarr4k";
-          depends_on = [
-            "rclone"
-            "radarr"
-          ];
-          ports = [ "9103:7878" ];
-          volumes = [
-            "/mnt:/mnt"
-            "/etc/media/radarr4k:/config"
-          ];
-          environment = {
-            TZ = "America/New_York";
-            PUID = "1000";
-            PGID = "1337";
-          };
-          restart = "unless-stopped";
+      radarr4k.service = {
+        image = "ghcr.io/hotio/radarr:release";
+        container_name = "radarr4k";
+        depends_on = [
+          "rclone"
+          "radarr"
+        ];
+        ports = [ "9103:7878" ];
+        volumes = [
+          "/mnt:/mnt"
+          "/etc/media/radarr4k:/config"
+        ];
+        environment = {
+          TZ = "America/New_York";
+          PUID = "1000";
+          PGID = "1337";
         };
+        restart = "unless-stopped";
       };
 
       # 4K DV
-      radarr4kdv = {
-        service = {
-          image = "ghcr.io/hotio/radarr:release";
-          container_name = "radarr4kdv";
-          depends_on = [
-            "rclone"
-            "radarr"
-          ];
-          ports = [ "9203:7878" ];
-          volumes = [
-            "/mnt:/mnt"
-            "/etc/media/radarr4kdv:/config"
-          ];
-          environment = {
-            TZ = "America/New_York";
-            PUID = "1000";
-            PGID = "1337";
-          };
-          restart = "unless-stopped";
+      radarr4kdv.service = {
+        image = "ghcr.io/hotio/radarr:release";
+        container_name = "radarr4kdv";
+        depends_on = [
+          "rclone"
+          "radarr"
+        ];
+        ports = [ "9203:7878" ];
+        volumes = [
+          "/mnt:/mnt"
+          "/etc/media/radarr4kdv:/config"
+        ];
+        environment = {
+          TZ = "America/New_York";
+          PUID = "1000";
+          PGID = "1337";
         };
+        restart = "unless-stopped";
       };
 
       # Extra
-      radarrextra = {
-        service = {
-          image = "ghcr.io/hotio/radarr:release";
-          container_name = "radarrextra";
-          depends_on = [
-            "rclone"
-            "radarr"
-          ];
-          ports = [ "9303:7878" ];
-          volumes = [
-            "/mnt:/mnt"
-            "/etc/media/radarrextra:/config"
-          ];
-          environment = {
-            TZ = "America/New_York";
-            PUID = "1000";
-            PGID = "1337";
-          };
-          restart = "unless-stopped";
+      radarrextra.service = {
+        image = "ghcr.io/hotio/radarr:release";
+        container_name = "radarrextra";
+        depends_on = [
+          "rclone"
+          "radarr"
+        ];
+        ports = [ "9303:7878" ];
+        volumes = [
+          "/mnt:/mnt"
+          "/etc/media/radarrextra:/config"
+        ];
+        environment = {
+          TZ = "America/New_York";
+          PUID = "1000";
+          PGID = "1337";
         };
+        restart = "unless-stopped";
       };
     };
 

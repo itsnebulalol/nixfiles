@@ -23,44 +23,40 @@
     #};
 
     virtualisation.arion.projects.media.settings.services = {
-      plex = {
-        service = {
-          image = "lscr.io/linuxserver/plex:latest";
-          container_name = "plex";
-          network_mode = "host";
-          volumes = [
-            "/etc/media/plex:/config"
-            "/mnt/local/transcodes/plex:/transcode"
-            "/mnt:/mnt"
-            "/dev/shm:/dev/shm"
-          ];
-          environment = {
-            TZ = "America/New_York";
-            PUID = "1000";
-            PGID = "1337";
-            VERSION = "docker";
-          };
-          restart = "unless-stopped";
+      plex.service = {
+        image = "lscr.io/linuxserver/plex:latest";
+        container_name = "plex";
+        network_mode = "host";
+        volumes = [
+          "/etc/media/plex:/config"
+          "/mnt/local/transcodes/plex:/transcode"
+          "/mnt:/mnt"
+          "/dev/shm:/dev/shm"
+        ];
+        environment = {
+          TZ = "America/New_York";
+          PUID = "1000";
+          PGID = "1337";
+          VERSION = "docker";
         };
+        restart = "unless-stopped";
       };
 
-      overseerr = {
-        service = {
-          image = "sctx/overseerr:latest";
-          container_name = "overseerr";
-          ports = [ "9007:9007" ];
-          volumes = [
-            "/etc/media/overseerr:/app/config"
-          ];
-          environment = {
-            TZ = "America/New_York";
-            PUID = "1000";
-            PGID = "1337";
+      overseerr.service = {
+        image = "sctx/overseerr:latest";
+        container_name = "overseerr";
+        ports = [ "9007:9007" ];
+        volumes = [
+          "/etc/media/overseerr:/app/config"
+        ];
+        environment = {
+          TZ = "America/New_York";
+          PUID = "1000";
+          PGID = "1337";
 
-            PORT = "9007";
-          };
-          restart = "unless-stopped";
+          PORT = "9007";
         };
+        restart = "unless-stopped";
       };
     };
 

@@ -6,6 +6,8 @@
   options.services.wg.enable = lib.mkEnableOption "Wireguard Server";
 
   config.os = lib.mkIf config.services.wg.enable {
+    services.docker.enable = true;
+
     systemd.tmpfiles.rules = [
       "d /etc/wg 0770 nebula users -"
     ];

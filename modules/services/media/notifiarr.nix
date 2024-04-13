@@ -11,19 +11,17 @@
     ];
 
     virtualisation.arion.projects.media.settings.services = {
-      notifiarr = {
-        service = {
-          image = "docker.io/golift/notifiarr";
-          container_name = "notifiarr";
-          hostname = "notifiarr";
-          ports = [ "5454:5454" ];
-          volumes = [
-            "/etc/media/notifiarr:/config"
-            "/var/run/utmp:/var/run/utmp"
-            "/etc/machine-id:/etc/machine-id"
-          ];
-          restart = "unless-stopped";
-        };
+      notifiarr.service = {
+        image = "docker.io/golift/notifiarr";
+        container_name = "notifiarr";
+        hostname = "notifiarr";
+        ports = [ "5454:5454" ];
+        volumes = [
+          "/etc/media/notifiarr:/config"
+          "/var/run/utmp:/var/run/utmp"
+          "/etc/machine-id:/etc/machine-id"
+        ];
+        restart = "unless-stopped";
       };
     };
   };

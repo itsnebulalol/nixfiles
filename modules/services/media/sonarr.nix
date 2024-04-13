@@ -25,92 +25,84 @@
 
     virtualisation.arion.projects.media.settings.services = {
       # HD
-      sonarr = {
-        service = {
-          image = "ghcr.io/hotio/sonarr:release";
-          container_name = "sonarr";
-          depends_on = ["rclone"];
-          ports = [ "9004:8989" ];
-          volumes = [
-            "/mnt:/mnt"
-            "/etc/media/sonarr:/config"
-          ];
-          environment = {
-            TZ = "America/New_York";
-            PUID = "1000";
-            PGID = "1337";
-          };
-          restart = "unless-stopped";
+      sonarr.service = {
+        image = "ghcr.io/hotio/sonarr:release";
+        container_name = "sonarr";
+        depends_on = ["rclone"];
+        ports = [ "9004:8989" ];
+        volumes = [
+          "/mnt:/mnt"
+          "/etc/media/sonarr:/config"
+        ];
+        environment = {
+          TZ = "America/New_York";
+          PUID = "1000";
+          PGID = "1337";
         };
+        restart = "unless-stopped";
       };
 
       # 4K
-      sonarr4k = {
-        service = {
-          image = "ghcr.io/hotio/sonarr:release";
-          container_name = "sonarr4k";
-          depends_on = [
-            "rclone"
-            "sonarr"
-          ];
-          ports = [ "9104:8989" ];
-          volumes = [
-            "/mnt:/mnt"
-            "/etc/media/sonarr4k:/config"
-          ];
-          environment = {
-            TZ = "America/New_York";
-            PUID = "1000";
-            PGID = "1337";
-          };
-          restart = "unless-stopped";
+      sonarr4k.service = {
+        image = "ghcr.io/hotio/sonarr:release";
+        container_name = "sonarr4k";
+        depends_on = [
+          "rclone"
+          "sonarr"
+        ];
+        ports = [ "9104:8989" ];
+        volumes = [
+          "/mnt:/mnt"
+          "/etc/media/sonarr4k:/config"
+        ];
+        environment = {
+          TZ = "America/New_York";
+          PUID = "1000";
+          PGID = "1337";
         };
+        restart = "unless-stopped";
       };
 
       # 4K DV
-      sonarr4kdv = {
-        service = {
-          image = "ghcr.io/hotio/sonarr:release";
-          container_name = "sonarr4kdv";
-          depends_on = [
-            "rclone"
-            "sonarr"
-          ];
-          ports = [ "9204:8989" ];
-          volumes = [
-            "/mnt:/mnt"
-            "/etc/media/sonarr4kdv:/config"
-          ];
-          environment = {
-            TZ = "America/New_York";
-            PUID = "1000";
-            PGID = "1337";
-          };
-          restart = "unless-stopped";
+      sonarr4kdv.service = {
+        image = "ghcr.io/hotio/sonarr:release";
+        container_name = "sonarr4kdv";
+        depends_on = [
+          "rclone"
+          "sonarr"
+        ];
+        ports = [ "9204:8989" ];
+        volumes = [
+          "/mnt:/mnt"
+          "/etc/media/sonarr4kdv:/config"
+        ];
+        environment = {
+          TZ = "America/New_York";
+          PUID = "1000";
+          PGID = "1337";
         };
+        restart = "unless-stopped";
       };
 
       # Extra
-      sonarrextra = {
-        service = {
-          image = "ghcr.io/hotio/sonarr:release";
-          container_name = "sonarrextra";
-          depends_on = [
-            "rclone"
-            "sonarr"
-          ];
-          ports = [ "9304:8989" ];
-          volumes = [
-            "/mnt:/mnt"
-            "/etc/media/sonarrextra:/config"
-          ];
-          environment = {
-            TZ = "America/New_York";
-            PUID = "1000";
-            PGID = "1337";
-          };
-          restart = "unless-stopped";
+      sonarrextra.service = {
+        image = "ghcr.io/hotio/sonarr:release";
+        container_name = "sonarrextra";
+        depends_on = [
+          "rclone"
+          "sonarr"
+        ];
+        ports = [ "9304:8989" ];
+        volumes = [
+          "/mnt:/mnt"
+          "/etc/media/sonarrextra:/config"
+        ];
+        environment = {
+          TZ = "America/New_York";
+          PUID = "1000";
+          PGID = "1337";
         };
+        restart = "unless-stopped";
       };
     };
 

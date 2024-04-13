@@ -19,13 +19,9 @@
   };
 
   config = lib.mkIf config.services.media.enable {
-    osModules = [inputs.arion.nixosModules.arion];
+    services.docker.enable = true;
 
     os = {
-      virtualisation.arion.backend = "docker";
-      virtualisation.docker.enable = true;
-      users.users.nebula.extraGroups = [ "docker" ];
-
       users.groups."${config.services.media.group.name}" = {
         inherit (config.services.media.group) gid;
       };

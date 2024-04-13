@@ -11,25 +11,23 @@
     ];
 
     virtualisation.arion.projects.media.settings.services = {
-      rdtclient = {
-        service = {
-          image = "docker.io/itsnebulalol/rdtclient:master";
-          container_name = "rdtclient";
-          depends_on = ["rclone"];
-          ports = [ "9001:6500" ];
-          volumes = [
-            "/etc/localtime:/etc/localtime:ro"
-            "/mnt:/mnt"
-            "/etc/media/rdtclient/data:/data"
-            "/etc/media/rdtclient/data/db:/data/db"
-          ];
-          environment = {
-            TZ = "America/New_York";
-            PUID = "1000";
-            PGID = "1337";
-          };
-          restart = "unless-stopped";
+      rdtclient.service = {
+        image = "docker.io/itsnebulalol/rdtclient:master";
+        container_name = "rdtclient";
+        depends_on = ["rclone"];
+        ports = [ "9001:6500" ];
+        volumes = [
+          "/etc/localtime:/etc/localtime:ro"
+          "/mnt:/mnt"
+          "/etc/media/rdtclient/data:/data"
+          "/etc/media/rdtclient/data/db:/data/db"
+        ];
+        environment = {
+          TZ = "America/New_York";
+          PUID = "1000";
+          PGID = "1337";
         };
+        restart = "unless-stopped";
       };
     };
 

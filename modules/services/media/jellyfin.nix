@@ -21,23 +21,21 @@
     };
 
     virtualisation.arion.projects.media.settings.services = {
-      jellyseerr = {
-        service = {
-          image = "fallenbagel/jellyseerr:latest";
-          container_name = "jellyseerr";
-          ports = [ "9008:9008" ];
-          volumes = [
-            "/etc/media/jellyseerr:/app/config"
-          ];
-          environment = {
-            TZ = "America/New_York";
-            PUID = "1000";
-            PGID = "1337";
+      jellyseerr.service = {
+        image = "fallenbagel/jellyseerr:latest";
+        container_name = "jellyseerr";
+        ports = [ "9008:9008" ];
+        volumes = [
+          "/etc/media/jellyseerr:/app/config"
+        ];
+        environment = {
+          TZ = "America/New_York";
+          PUID = "1000";
+          PGID = "1337";
 
-            PORT = "9008";
-          };
-          restart = "unless-stopped";
+          PORT = "9008";
         };
+        restart = "unless-stopped";
       };
     };
 
