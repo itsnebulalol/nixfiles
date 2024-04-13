@@ -3,7 +3,8 @@
 ## Hosts
 
 - Arete (MacBook Pro M1, 2020, 13")
-- Geras (Old Dell Inspiron)
+- Consus (Dell PowerEdge 2900)
+- Geras (Dell Inspiron as a Server)
 - Maniae (Oracle Cloud 3)
 - Oizys (Oracle Cloud 1)
 - Poseidon (Oracle Cloud 2 - Media Server)
@@ -28,11 +29,13 @@
 
 ### Services
 
+- AdGuard Home (+ adguardhome-sync)
 - Caddy
 - cloudflared
 - Conduit
-- nostr-rs-relay
-- tiny-dfr
+- Docker
+- Instafix
+- Monero
 - Media Server
   - Jellyfin (+ Jellyseerr)
   - Notifiarr
@@ -43,12 +46,16 @@
   - Sonarr (Normal, 4K, 4K DV, Extra)
   - Tautulli
   - Zurg
-- Monero
+- nostr-rs-relay
 - Samba
+- Scrypted
 - SSH
 - Tailscale
+- tiny-dfr
 - Watchtower
+- WireGuard Server
 
 ## Credits
 
 - [ne3oney/nixus](https://github.com/n3oney/nixus)
+- [nikitawootten/infra](https://github.com/nikitawootten/infra)

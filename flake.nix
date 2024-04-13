@@ -61,6 +61,19 @@
         };
       };
 
+      # Dell PowerEdge 2900
+      consus = combinedManager.nixosSystem {
+        inherit inputs;
+        configuration = {
+          system = "x86_64-linux";
+          modules = [
+            ./modules
+            ./hosts/consus
+            ./configs/consus
+          ];
+        };
+      };
+
       # Dell Inspiron
       geras = combinedManager.nixosSystem {
         inherit inputs;
