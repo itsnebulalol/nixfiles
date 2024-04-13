@@ -8,10 +8,10 @@ stdenv.mkDerivation {
   version = "2.5";
 
   src = pkgs.fetchFromGitHub {
-    owner = "NvChad";
-    repo = "starter";
-    rev = "d801a059efd216b3d11a5a1eaf039e6e583d3e49";
-    sha256 = "sha256-hfpvQl7HPBXfX/UqbapB54DKJK4jsivYdTZV3bf0hMw=";
+    owner = "itsnebulalol";
+    repo = "nvchad-config";
+    rev = "ad3b7de7b988840471aa232fd18ef1b94e4c0eb1";
+    sha256 = "sha256-F47+5USQODEgNM570a3r7dF13JgQ1nEZ/6VziyZQryM=";
   };
 
   installPhase = ''
