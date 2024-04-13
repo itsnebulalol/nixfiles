@@ -6,7 +6,7 @@
 }: {
   options.services.docker.enable = lib.mkEnableOption "Docker";
 
-  config = lib.mkIf cfg.enable {
+  config = lib.mkIf options.services.docker.enable {
     osModules = [inputs.arion.nixosModules.arion];
 
     os = {
