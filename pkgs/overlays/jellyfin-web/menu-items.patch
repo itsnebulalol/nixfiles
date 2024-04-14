@@ -1,0 +1,19 @@
+diff --git a/src/config.json b/src/config.json
+index 3d80b1efe..db69830ec 100644
+--- a/src/config.json
++++ b/src/config.json
+@@ -29,7 +29,13 @@
+       "color": "#0c2450"
+     }
+   ],
+-  "menuLinks": [],
++  "menuLinks": [
++    {
++      "name": "Requests",
++      "icon": "cloud_download",
++      "url": "https://privaterequests.itsnebula.net"
++    }
++  ],
+   "servers": [],
+   "plugins": [
+     "playAccessValidation/plugin",

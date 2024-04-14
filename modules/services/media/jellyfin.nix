@@ -2,6 +2,7 @@
   config,
   lib,
   osConfig,
+  pkgs,
   ...
 }: {
   options.services.media.jellyfin.enable = lib.mkEnableOption "Jellyfin" // {default = config.services.media.enable;};
@@ -14,6 +15,15 @@
 
     services.jellyfin = {
       enable = true;
+      package = pkgs.jellyfin.overrideAttrs (old: {
+        version = "master";
+        src = pkgs.fetchFromGitHub {
+          owner = "jellyfin";
+          repo = "jellyfin";
+          rev = "master";
+          hash = "SKIP";
+        };
+      });
       user = "nebula";
       group = config.services.media.group.name;
       dataDir = "/etc/media/jellyfin";
