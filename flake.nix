@@ -25,6 +25,10 @@
       url = "github:viperML/nh";
     };
     nur.url = "github:nix-community/NUR";
+    nvchad-config = {
+      flake = false;
+      url = "github:itsnebulalol/nvchad-config";
+    };
     spicetify-nix.url = "github:the-argus/spicetify-nix";
     tiny-dfr.url = "github:itsnebulalol/tiny-dfr";
   };

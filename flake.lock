@@ -96,11 +96,11 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1712765734,
-        "narHash": "sha256-HakehmZVdhbXHNaTzoSwIHdvy1A3A7XXEIUHV2cC7d8=",
+        "lastModified": 1713180885,
+        "narHash": "sha256-G9yAD8l8XJr3AyTADtM6j4T+tEMwn9z3ojy1lFOki5U=",
         "owner": "girlbossceo",
         "repo": "conduwuit",
-        "rev": "7d92cad55f58ef55d5c95ecf3753e0fa75ab11e1",
+        "rev": "6d47c20efa5b15a53b98d73ea72a759adaea00d1",
         "type": "github"
       },
       "original": {
@@ -419,11 +419,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1713077896,
-        "narHash": "sha256-Noot8H0EZEAFRQWyGxh9ryvhK96xpIqKbh78X447JWs=",
+        "lastModified": 1713166971,
+        "narHash": "sha256-t0P/rKlsE5l1O3O2LYtAelLzp7PeoPCSzsIietQ1hSM=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "630a0992b3627c64e34f179fab68e3d48c6991c0",
+        "rev": "1c43dcfac48a2d622797f7ab741670fdbcf8f609",
         "type": "github"
       },
       "original": {
@@ -697,16 +697,32 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1713127733,
-        "narHash": "sha256-8DgSHzlv5WvDGEWiCmkyiRUR70dBX52YRXyXcQV6PF8=",
+        "lastModified": 1713285867,
+        "narHash": "sha256-7/ZPtsZXzNYvrXjXbAnhqXo6GYMFE+Gpi0dKU8TKsfc=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "54d3d777defd18924d6c1438dedab6ae6d3cd976",
+        "rev": "ca1c9fd28be5e8c4dca63bec518e203e55e82325",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
         "repo": "NUR",
+        "type": "github"
+      }
+    },
+    "nvchad-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1713028610,
+        "narHash": "sha256-F47+5USQODEgNM570a3r7dF13JgQ1nEZ/6VziyZQryM=",
+        "owner": "itsnebulalol",
+        "repo": "nvchad-config",
+        "rev": "ad3b7de7b988840471aa232fd18ef1b94e4c0eb1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "itsnebulalol",
+        "repo": "nvchad-config",
         "type": "github"
       }
     },
@@ -745,6 +761,7 @@
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_7",
         "nur": "nur",
+        "nvchad-config": "nvchad-config",
         "plasma-manager": "plasma-manager",
         "spicetify-nix": "spicetify-nix",
         "tiny-dfr": "tiny-dfr"

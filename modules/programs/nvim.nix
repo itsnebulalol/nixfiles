@@ -3,6 +3,7 @@
   lib,
   config,
   hmConfig,
+  inputs,
   ...
 }: {
   config.os = {
@@ -15,7 +16,7 @@
   };
 
   config.hm.xdg.configFile."nvim" = {
-    source = hmConfig.lib.file.mkOutOfStoreSymlink "${pkgs.nvchad}";
+    source = hmConfig.lib.file.mkOutOfStoreSymlink "${inputs.nvchad-config}";
     recursive = true;
   };
 }
