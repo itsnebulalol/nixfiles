@@ -14,7 +14,7 @@
           credentialsFile = osConfig.age.secrets.cloudflared-home.path;
           ingress = {
             "f.itsnebula.net" = "http://server.coin-gray.ts.net:5381";
-            "ig.itsnebula.net" = "http://server.coin-gray.ts.net:2741";
+            "ig.itsnebula.net" = "http://maniae.coin-gray.ts.net:2741";
           };
           default = "http_status:404";
         };
