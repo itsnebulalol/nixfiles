@@ -3,9 +3,9 @@ let
   arete_host = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFYNR27SPgJINtB95y5v+T80V3yK5RTd+c0NKho6yRWE";
   arete = [arete_user arete_host];
 
-  # consus_user = "";
-  # consus_host = "";
-  # consus = [consus_user consus_host];
+  consus_user = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE/c8uEXFkY25C51F/QS+uPw1dBVCSrAaCYgy3lzRQd3";
+  consus_host = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILgaHSl0Mv49oFjYV3TALqIQTpcgDy2vY2/2T+X0b6DD";
+  consus = [consus_user consus_host];
 
   geras_user = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE9igQb33UXH8wAGTC+K7w6uBdciIKI03Xxc2JcoAJNz";
   geras_host = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILVxSXFgepyJf3LilMcmjhIDrUw9dnvs76/timPjNdGB";
@@ -29,10 +29,10 @@ let
 
 in {
   "caddy-cloudflare.age".publicKeys = poseidon ++ semreh;
-  "cloudflared-home.age".publicKeys = semreh;
+  "cloudflared-home.age".publicKeys = consus ++ semreh;
   "cloudflared-media.age".publicKeys = poseidon ++ semreh;
   "rd_conf.age".publicKeys = poseidon ++ semreh;
-  "tailscale.age".publicKeys = arete ++ geras ++ maniae ++ oizys ++ poseidon ++ semreh;
+  "tailscale.age".publicKeys = arete ++ consus ++ geras ++ maniae ++ oizys ++ poseidon ++ semreh;
   "wakatime.age".publicKeys = arete ++ semreh;
   "wg-home.age".publicKeys = poseidon ++ semreh;
 }

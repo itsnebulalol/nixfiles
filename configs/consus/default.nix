@@ -7,8 +7,8 @@
   nur.enable = true;
 
   services = {
-    adguard.enable = true;
-    instafix.enable = true;
+  #  adguard.enable = true;
+  #  instafix.enable = true;
     samba = {
       enable = true;
 
@@ -16,9 +16,9 @@
       shareName = "consus";
       path = "/data";
     };
-    scrypted.enable = true;
+  #  scrypted.enable = true;
     tailscale.enable = true;
-    watchtower.enable = true;
-    wg.enable = true;
+  #  watchtower.enable = true;
+  #  wg.enable = true;
   };
 }
