@@ -6,7 +6,10 @@
   options.services.wg.enable = lib.mkEnableOption "Wireguard Server";
 
   config = lib.mkIf config.services.wg.enable {
-    services.docker.enable = true;
+    services = {
+      caddy-internal.enable = true;
+      docker.enable = true;
+    };
 
     os = {
       systemd.tmpfiles.rules = [

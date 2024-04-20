@@ -19,7 +19,10 @@
   };
 
   config = lib.mkIf config.services.media.enable {
-    services.docker.enable = true;
+    services = {
+      caddy-internal.enable = true;
+      docker.enable = true;
+    };
 
     os = {
       users.groups."${config.services.media.group.name}" = {
@@ -35,16 +38,6 @@
         "d /mnt/local 0770 nebula ${config.services.media.group.name} -"
         "d /mnt/local/transcodes 0770 nebula ${config.services.media.group.name} -"
       ];
-
-      networking.firewall.allowedTCPPorts = [80 443];
-
-      environment.etc."caddy/cloudflare".source = osConfig.age.secrets.caddy-cloudflare.path;
-      services.caddy = {
-        package = pkgs.caddy-custom;
-        extraConfig = ''
-          import ./cloudflare
-        '';
-      };
     };
   };
 }

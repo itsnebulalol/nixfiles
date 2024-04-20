@@ -7,7 +7,6 @@
   nur.enable = true;
 
   services = {
-    cloudflared.enable = true;
     conduit.enable = true;
     nostr-relay.enable = true;
     tailscale.enable = true;

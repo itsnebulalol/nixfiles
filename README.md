@@ -30,8 +30,7 @@
 ### Services
 
 - AdGuard Home (+ adguardhome-sync)
-- Caddy
-- cloudflared
+- Caddy Internal
 - Conduit
 - Docker
 - Instafix
