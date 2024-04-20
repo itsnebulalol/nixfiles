@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  osConfig,
   ...
 }: {
   options.services.instafix.enable = lib.mkEnableOption "InstaFix";
