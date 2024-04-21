@@ -7,7 +7,7 @@
   nur.enable = true;
 
   services = {
-  #  adguard.enable = true;
+    adguard.enable = true;
     instafix.enable = true;
     samba = {
       enable = true;
