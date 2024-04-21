@@ -28,11 +28,12 @@ let
   semreh = [semreh_user semreh_host];
 
 in {
+  "adguardhome_sync.age".publicKeys = consus;
   "caddy-cloudflare.age".publicKeys = consus ++ poseidon ++ semreh;
   "cloudflared-home.age".publicKeys = consus ++ semreh;
-  "cloudflared-media.age".publicKeys = poseidon ++ semreh;
-  "rd_conf.age".publicKeys = poseidon ++ semreh;
+  "cloudflared-media.age".publicKeys = consus ++ poseidon;
+  "rd_conf.age".publicKeys = consus ++ poseidon;
   "tailscale.age".publicKeys = arete ++ consus ++ geras ++ maniae ++ oizys ++ poseidon ++ semreh;
-  "wakatime.age".publicKeys = arete ++ semreh;
-  "wg-home.age".publicKeys = poseidon ++ semreh;
+  "wakatime.age".publicKeys = arete ++ consus;
+  "wg-home.age".publicKeys = consus ++ poseidon;
 }

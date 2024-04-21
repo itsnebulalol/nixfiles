@@ -24,19 +24,20 @@ in {
 
       os = {
         age.secrets = lib.mkMerge [
+          (secretForHostnames ["consus"] ../../secrets/adguardhome_sync.age "adguardhome_sync" {})
           (secretForHostnames ["consus" "poseidon" "semreh"] ../../secrets/caddy-cloudflare.age "caddy-cloudflare" { owner = "caddy"; })
           (secretForHostnames ["consus" "semreh"] ../../secrets/cloudflared-home.age "cloudflared-home" { owner = "cloudflared"; })
-          (secretForHostnames ["poseidon" "semreh"] ../../secrets/cloudflared-media.age "cloudflared-media" { owner = "cloudflared"; })
-          (secretForHostnames ["poseidon" "semreh"] ../../secrets/rd_conf.age "rd_conf" {})
+          (secretForHostnames ["consus" "poseidon"] ../../secrets/cloudflared-media.age "cloudflared-media" { owner = "cloudflared"; })
+          (secretForHostnames ["consus" "poseidon"] ../../secrets/rd_conf.age "rd_conf" {})
           (secretForHostnames ["arete" "consus" "geras" "maniae" "oizys" "poseidon" "semreh"] ../../secrets/tailscale.age "tailscale" {})
-          (secretForHostnames ["poseidon" "semreh"] ../../secrets/wg-home.age "wg-home" {})
+          (secretForHostnames ["consus" "poseidon"] ../../secrets/wg-home.age "wg-home" {})
         ];
         environment.systemPackages = [inputs.agenix.packages.${pkgs.system}.default];
       };
 
       hm.age = {
         secrets = lib.mkMerge [
-          (secretForHostnames ["arete" "semreh"] ../../secrets/wakatime.age "wakatime" {})
+          (secretForHostnames ["arete" "consus"] ../../secrets/wakatime.age "wakatime" {})
         ];
         identityPaths = ["/home/nebula/.ssh/id_ed25519"];
       };

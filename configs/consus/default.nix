@@ -8,7 +8,7 @@
 
   services = {
   #  adguard.enable = true;
-  #  instafix.enable = true;
+    instafix.enable = true;
     samba = {
       enable = true;
 
@@ -16,9 +16,10 @@
       shareName = "consus";
       path = "/data";
     };
-  #  scrypted.enable = true;
+    scrypted.enable = true;
+    static.enable = true;
     tailscale.enable = true;
-  #  watchtower.enable = true;
-  #  wg.enable = true;
+    watchtower.enable = true;
+    wg.enable = true;
   };
 }

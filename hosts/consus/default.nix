@@ -16,14 +16,6 @@
     networking = {
       hostName = "consus";
       networkmanager.enable = true;
-
-      interfaces.end0.ipv4.addresses = [{
-        address = "192.168.1.242";
-        prefixLength = 24;
-      }];
-
-      defaultGateway = "192.168.1.1";
-      nameservers = [ "1.1.1.1" "1.0.0.1" ];
     };
 
     systemd.services.NetworkManager-wait-online.enable = false;
@@ -40,11 +32,11 @@
       root.openssh.authorizedKeys.keys = keys;
     };
 
-    fileSystems."/data" = {
-      device = "/dev/disk/by-label/data";
-      fsType = "ext4";
-      options = ["uid=1000" "gid=100"];
-    };
+    #fileSystems."/data" = {
+    #  device = "/dev/disk/by-label/data";
+    #  fsType = "ext4";
+    #  options = ["uid=1000" "gid=100"];
+    #};
 
     time.timeZone = "America/New_York";
 
