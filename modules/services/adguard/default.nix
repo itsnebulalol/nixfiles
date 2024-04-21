@@ -41,13 +41,17 @@ in {
 
       virtualisation.arion.projects.server.settings.services = {
         adguardhome-sync.service = {
-          image = "ghcr.io/bakito/adguardhome-sync";
+          image = "lscr.io/linuxserver/adguardhome-sync:latest";
           container_name = "adguardhome-sync";
           volumes = [
             "${osConfig.age.secrets.adguardhome_sync.path}:/config/adguardhome-sync.yaml"
-            "/var/run/docker.sock:/var/run/docker.sock"
           ];
-          command = [ "run" "--config" "/config/adguardhome-sync.yaml" ];
+          environment = {
+            TZ = "America/New_York";
+            PUID = "1000";
+            PGID = "100";
+            CONFIGFILE = "/config/adguardhome-sync.yaml";
+          };
           restart = "unless-stopped";
         };
       };

@@ -13,24 +13,9 @@
       package = inputs.conduwuit.packages.${pkgs.system}.default;
       enable = true;
       settings.global = {
+        address = "0.0.0.0";
         server_name = "itsnebula.net";
         database_backend = "rocksdb";
-      };
-    };
-
-    services.cloudflared = {
-      enable = true;
-      tunnels = {
-        "4978c8b8-c9fe-47b9-af50-d59921ebdde1" = {
-          credentialsFile = osConfig.age.secrets.cloudflared-home.path;
-          ingress = {
-            "matrix.itsnebula.net" = {
-              service = "http://[${osConfig.services.matrix-conduit.settings.global.address}]:${toString osConfig.services.matrix-conduit.settings.global.port}";
-              path = "/_matrix";
-            };
-          };
-          default = "http_status:404";
-        };
       };
     };
   };

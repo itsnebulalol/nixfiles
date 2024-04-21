@@ -7,6 +7,7 @@
   nur.enable = true;
 
   services = {
+    caddy.enable = true;
     tailscale.enable = true;
   };
 }

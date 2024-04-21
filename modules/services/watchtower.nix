@@ -12,7 +12,9 @@
       watchtower.service = {
         image = "containrrr/watchtower";
         container_name = "watchtower";
-        ports = [ "2741:3000" ];
+        volumes = [
+          "/var/run/docker.sock:/var/run/docker.sock"
+        ];
         restart = "unless-stopped";
       };
     };

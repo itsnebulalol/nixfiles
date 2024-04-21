@@ -24,8 +24,8 @@ in {
 
       os = {
         age.secrets = lib.mkMerge [
-          (secretForHostnames ["consus"] ../../secrets/adguardhome_sync.age "adguardhome_sync" {})
-          (secretForHostnames ["consus" "poseidon" "semreh"] ../../secrets/caddy-cloudflare.age "caddy-cloudflare" { owner = "caddy"; })
+          (secretForHostnames ["consus"] ../../secrets/adguardhome_sync.age "adguardhome_sync" { owner = "nebula"; })
+          (secretForHostnames ["consus" "maniae" "poseidon" "semreh"] ../../secrets/caddy-cloudflare.age "caddy-cloudflare" { owner = "caddy"; })
           (secretForHostnames ["consus" "semreh"] ../../secrets/cloudflared-home.age "cloudflared-home" { owner = "cloudflared"; })
           (secretForHostnames ["consus" "poseidon"] ../../secrets/cloudflared-media.age "cloudflared-media" { owner = "cloudflared"; })
           (secretForHostnames ["consus" "poseidon"] ../../secrets/rd_conf.age "rd_conf" {})

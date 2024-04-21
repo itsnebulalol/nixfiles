@@ -29,7 +29,7 @@ let
 
 in {
   "adguardhome_sync.age".publicKeys = consus;
-  "caddy-cloudflare.age".publicKeys = consus ++ poseidon ++ semreh;
+  "caddy-cloudflare.age".publicKeys = consus ++ maniae ++ poseidon ++ semreh;
   "cloudflared-home.age".publicKeys = consus ++ semreh;
   "cloudflared-media.age".publicKeys = consus ++ poseidon;
   "rd_conf.age".publicKeys = consus ++ poseidon;

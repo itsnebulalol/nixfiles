@@ -26,6 +26,7 @@
       keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMCzv/x3Mly7m621sMV+jtlyFRtazkfA6B6m8yMIV1Yv" # main SSH key
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJPQbrPo6LqXSvUYbHTVPymkWhhb4jhlBSjIUYs4JMHL" # arete key
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEx8KkpRE0VpGp0i3bE/qB1+5vWniibi1Za7k0KOV/f3" # poseidon key
       ];
     in {
       nebula.openssh.authorizedKeys.keys = keys;
@@ -35,7 +36,6 @@
     #fileSystems."/data" = {
     #  device = "/dev/disk/by-label/data";
     #  fsType = "ext4";
-    #  options = ["uid=1000" "gid=100"];
     #};
 
     time.timeZone = "America/New_York";
