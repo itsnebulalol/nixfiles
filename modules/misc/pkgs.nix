@@ -6,6 +6,7 @@
     aria2
     dig
     python3
+    pipx
     ripgrep
     neofetch
     sshfs

@@ -13,6 +13,8 @@
     os = {
       programs.zsh.enable = true;
 
+      environment.localBinInPath = true;
+
       users.defaultUserShell = pkgs.zsh;
     };
 

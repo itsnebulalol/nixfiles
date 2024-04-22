@@ -13,6 +13,8 @@
         "d /etc/scrypted 0770 nebula users -"
       ];
 
+      networking.firewall.allowedTCPPorts = [10443 44150 31800 34538 37585 38098 42633 44989 39464 40071];
+
       virtualisation.arion.projects.server.settings.services = {
         scrypted = {
           out.service = {
