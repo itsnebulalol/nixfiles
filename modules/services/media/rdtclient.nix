@@ -3,7 +3,7 @@
   lib,
   ...
 }: {
-  options.services.media.rdtclient.enable = lib.mkEnableOption "RDTClient" // {default = config.services.media.enable;};
+  options.services.media.rdtclient.enable = lib.mkEnableOption "RDTClient";
 
   config.os = lib.mkIf (config.services.media.enable && config.services.media.rdtclient.enable) {
     systemd.tmpfiles.rules = [

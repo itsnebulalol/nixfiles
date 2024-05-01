@@ -29,9 +29,14 @@ let
 
 in {
   "adguardhome_sync.age".publicKeys = consus;
+  "blackhole.age".publicKeys = consus ++ poseidon;
+  "blackhole4k.age".publicKeys = consus ++ poseidon;
+  "blackhole4kdv.age".publicKeys = consus ++ poseidon;
+  "blackholeextra.age".publicKeys = consus ++ poseidon;
   "caddy-cloudflare.age".publicKeys = consus ++ maniae ++ poseidon ++ semreh;
   "cloudflared-home.age".publicKeys = consus ++ semreh;
   "cloudflared-media.age".publicKeys = consus ++ poseidon;
+  "homepage_env.age".publicKeys = consus ++ poseidon;
   "rd_conf.age".publicKeys = consus ++ poseidon;
   "tailscale.age".publicKeys = arete ++ consus ++ geras ++ maniae ++ oizys ++ poseidon ++ semreh;
   "wakatime.age".publicKeys = arete ++ consus;

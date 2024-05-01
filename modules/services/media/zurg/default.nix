@@ -26,7 +26,7 @@
 
     virtualisation.arion.projects.media.settings.services = {
       gluetun.service = {
-        image = "docker.io/qmcgaw/gluetun";
+        image = "docker.io/qmcgaw/gluetun:v3.38.0";
         container_name = "gluetun";
         ports = [ "9999:9999" ];
         capabilities = {
