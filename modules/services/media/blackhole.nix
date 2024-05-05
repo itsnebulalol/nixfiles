@@ -4,7 +4,7 @@
   osConfig,
   ...
 }: {
-  options.services.media.blackhole.enable = lib.mkEnableOption "Blackhole" // {default = config.services.media.enable;};
+  options.services.media.blackhole.enable = lib.mkEnableOption "Blackhole";
 
   config.os = lib.mkIf (config.services.media.enable && config.services.media.blackhole.enable) {
     systemd.tmpfiles.rules = [
