@@ -92,7 +92,7 @@
           PUID = "1000";
           PGID = "1337";
         };
-        command = [ "mount" "zurg:" "/data" "--allow-non-empty" "--allow-other" "--uid=1000" "--gid=1337" "--dir-cache-time" "10s" ];
+        command = [ "mount" "zurg:" "/data" "--allow-non-empty" "--allow-other" "--uid=1000" "--gid=1337" "--dir-cache-time" "10s" "--rc" "--rc-addr=0.0.0.0:5572" "--rc-web-gui" "--rc-no-auth" ];
         restart = "unless-stopped";
       };
     };

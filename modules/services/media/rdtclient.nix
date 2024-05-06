@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: {
   options.services.media.rdtclient.enable = lib.mkEnableOption "RDTClient" // {default = config.services.media.enable;};
@@ -9,6 +10,8 @@
     systemd.tmpfiles.rules = [
       "d /etc/media/rdtclient 0770 nebula ${config.services.media.group.name} -"
     ];
+
+    environment.systemPackages = with pkgs; [ rclone ];
 
     virtualisation.arion.projects.media.settings.services = {
       rdtclient.service = {
@@ -21,6 +24,7 @@
           "/mnt:/mnt"
           "/etc/media/rdtclient/data:/data"
           "/etc/media/rdtclient/data/db:/data/db"
+          "/run/current-system/sw/bin/rclone:/usr/bin/rclone"
         ];
         environment = {
           TZ = "America/New_York";
