@@ -30,12 +30,16 @@
 ### Services
 
 - AdGuard Home (+ adguardhome-sync)
+- Caddy
 - Caddy Internal
 - Conduit
 - Docker
+- Homepage
 - Instafix
 - Monero
 - Media Server
+  - Annatar
+  - Blackhole
   - Jellyfin (+ Jellyseerr)
   - Notifiarr
   - Plex (+ Overseerr)
@@ -48,6 +52,8 @@
 - nostr-rs-relay
 - Samba
 - Scrypted
+- Soulseek
+- Static
 - SSH
 - Tailscale
 - tiny-dfr
