@@ -129,19 +129,6 @@
           ];
         };
       };
-
-      # Raspberry Pi 4
-      semreh = combinedManager.nixosSystem {
-        inherit inputs;
-        configuration = {
-          system = "aarch64-linux";
-          modules = [
-            ./modules
-            ./hosts/semreh
-            ./configs/semreh
-          ];
-        };
-      };
     };
   };
 }

@@ -30,12 +30,12 @@
         '';
 
         "matrix.itsnebula.net".extraConfig = ''
-          reverse_proxy /_matrix/* semreh.coin-gray.ts.net:6167
+          reverse_proxy /_matrix/* consus.coin-gray.ts.net:6167
           import cloudflare
         '';
 
         "nostr.itsnebula.net".extraConfig = ''
-          reverse_proxy semreh.coin-gray.ts.net:4629
+          reverse_proxy consus.coin-gray.ts.net:4629
           import cloudflare
         '';
       };

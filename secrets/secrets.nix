@@ -23,22 +23,17 @@ let
   poseidon_host = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMTMvXrnkyPvxX+cNDm8HG+0X42pkCaqXoITpBEZNFG9";
   poseidon = [poseidon_user poseidon_host];
 
-  semreh_user = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBVho+KHY8MayDm1un32hZUZt6H4SsMTboEwvQzYuf5E";
-  semreh_host = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOczbXpTKp8QZoOI/+5pvLYNXXpC6E2/fyZU32wWaxw6";
-  semreh = [semreh_user semreh_host];
-
 in {
   "adguardhome_sync.age".publicKeys = consus;
   "blackhole.age".publicKeys = consus ++ poseidon;
   "blackhole4k.age".publicKeys = consus ++ poseidon;
   "blackhole4kdv.age".publicKeys = consus ++ poseidon;
   "blackholeextra.age".publicKeys = consus ++ poseidon;
-  "caddy-cloudflare.age".publicKeys = consus ++ maniae ++ poseidon ++ semreh;
-  "cloudflared-home.age".publicKeys = consus ++ semreh;
+  "caddy-cloudflare.age".publicKeys = consus ++ maniae ++ poseidon;
   "cloudflared-media.age".publicKeys = consus ++ poseidon;
   "homepage_env.age".publicKeys = consus ++ poseidon;
   "rd_conf.age".publicKeys = consus ++ poseidon;
-  "tailscale.age".publicKeys = arete ++ consus ++ geras ++ maniae ++ oizys ++ poseidon ++ semreh;
+  "tailscale.age".publicKeys = arete ++ consus ++ geras ++ maniae ++ oizys ++ poseidon;
   "wakatime.age".publicKeys = arete ++ consus;
   "wg-home.age".publicKeys = consus ++ poseidon;
 }
