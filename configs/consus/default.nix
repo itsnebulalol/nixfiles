@@ -13,8 +13,36 @@
       enable = true;
 
       serverName = "consus";
-      shareName = "consus";
-      path = "/data";
+      globalConfig = ''
+        fruit:model = Xserve
+      '';
+      shares = {
+        "files" = {
+          comment = "Files";
+          path = "/data/files";
+          browseable = "yes";
+          "read only" = "no";
+          "guest ok" = "no";
+          "create mask" = "0644";
+          "directory mask" = "0755";
+          "force user" = "nebula";
+          "force group" = "users";
+          "vfs objects" = "catia fruit streams_xattr";
+        };
+        "timemachine" = {
+          comment = "Time Machine";
+          path = "/data/timemachine";
+          browseable = "yes";
+          "read only" = "no";
+          "guest ok" = "no";
+          "create mask" = "0644";
+          "directory mask" = "0755";
+          "force user" = "nebula";
+          "force group" = "users";
+          "vfs objects" = "catia fruit streams_xattr";
+          "fruit:time machine" = "yes";
+        };
+      };
     };
     scrypted.enable = true;
     static.enable = true;

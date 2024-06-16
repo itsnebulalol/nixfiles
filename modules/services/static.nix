@@ -12,7 +12,7 @@
       enable = true;
       virtualHosts = {
         ":7697".extraConfig = ''
-          root * /data/Static
+          root * /data/files/Static
           file_server browse
         '';
       };

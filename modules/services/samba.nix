@@ -17,8 +17,11 @@ in {
     enable = mkEnableOption "Samba";
 
     serverName = strOption;
-    shareName = strOption;
-    path = strOption;
+    globalConfig = strOption;
+    shares = mkOption {
+      type = types.attrs;
+      default = {};
+    };
   };
 
   config.os = mkIf cfg.enable {
@@ -28,6 +31,7 @@ in {
         securityType = "user";
         openFirewall = true;
         extraConfig = ''
+          fruit:aapl = yes
           workgroup = WORKGROUP
           server string = ${cfg.serverName}
           netbios name = ${cfg.serverName}
@@ -36,19 +40,9 @@ in {
           hosts deny = 0.0.0.0/0
           guest account = nobody
           map to guest = bad user
+          ${cfg.globalConfig}
         '';
-        shares = {
-          ${cfg.shareName} = {
-            path = cfg.path;
-            browseable = "yes";
-            "read only" = "no";
-            "guest ok" = "no";
-            "create mask" = "0644";
-            "directory mask" = "0755";
-            "force user" = "nebula";
-            "force group" = "users";
-          };
-        };
+        shares = cfg.shares;
       };
 
       samba-wsdd = {

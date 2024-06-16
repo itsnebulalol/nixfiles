@@ -12,8 +12,22 @@
       enable = true;
 
       serverName = "geras";
-      shareName = "geras";
-      path = "/data";
+      globalConfig = ''
+        fruit:model = Laptop
+      '';
+      shares = {
+        "geras" = {
+          path = "/data";
+          browseable = "yes";
+          "read only" = "no";
+          "guest ok" = "no";
+          "create mask" = "0644";
+          "directory mask" = "0755";
+          "force user" = "nebula";
+          "force group" = "users";
+          "vfs objects" = "catia fruit streams_xattr";
+        };
+      };
     };
     tailscale.enable = true;
   };
