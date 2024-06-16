@@ -33,16 +33,14 @@ in {
           (secretForHostnames ["consus" "poseidon"] ../../secrets/cloudflared-media.age "cloudflared-media" { owner = "cloudflared"; })
           (secretForHostnames ["consus" "poseidon"] ../../secrets/homepage_env.age "homepage_env" {})
           (secretForHostnames ["consus" "poseidon"] ../../secrets/rd_conf.age "rd_conf" {})
-          (secretForHostnames ["arete" "consus" "geras" "maniae" "oizys" "poseidon"] ../../secrets/tailscale.age "tailscale" {})
+          (secretForHostnames ["consus" "geras" "maniae" "oizys" "poseidon"] ../../secrets/tailscale.age "tailscale" {})
           (secretForHostnames ["consus" "poseidon"] ../../secrets/wg-home.age "wg-home" {})
         ];
         environment.systemPackages = [inputs.agenix.packages.${pkgs.system}.default];
       };
 
       hm.age = {
-        secrets = lib.mkMerge [
-          (secretForHostnames ["arete" "consus"] ../../secrets/wakatime.age "wakatime" {})
-        ];
+        secrets = lib.mkMerge [];
         identityPaths = ["/home/nebula/.ssh/id_ed25519"];
       };
     })

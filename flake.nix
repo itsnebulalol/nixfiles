@@ -52,19 +52,6 @@
     );
 
     nixosConfigurations = {
-      # M1 MacBook
-      arete = combinedManager.nixosSystem {
-        inherit inputs;
-        configuration = {
-          system = "aarch64-linux";
-          modules = [
-            ./modules
-            ./hosts/arete
-            ./configs/arete
-          ];
-        };
-      };
-
       # Dell PowerEdge 2900
       consus = combinedManager.nixosSystem {
         inherit inputs;

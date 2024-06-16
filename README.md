@@ -2,7 +2,6 @@
 
 ## Hosts
 
-- Arete (MacBook Pro M1, 2020, 13")
 - Consus (Dell PowerEdge 2900)
 - Geras (Dell Inspiron as a Server)
 - Maniae (Oracle Cloud 3)
@@ -14,17 +13,9 @@
 
 ### Programs
 
-- 1Password
-- Chromium
-- Discord (Vesktop)
 - Git
-- Gnome
-- KDE
-- Minecraft (Prism Launcher)
 - nh
 - Neovim
-- Spotify
-- VSCode
 - zsh
 
 ### Services
@@ -53,10 +44,9 @@
 - Samba
 - Scrypted
 - Soulseek
-- Static
 - SSH
+- Static
 - Tailscale
-- tiny-dfr
 - Watchtower
 - WireGuard Server
 

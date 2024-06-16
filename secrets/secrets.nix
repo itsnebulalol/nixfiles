@@ -1,8 +1,4 @@
 let
-  arete_user = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJPQbrPo6LqXSvUYbHTVPymkWhhb4jhlBSjIUYs4JMHL";
-  arete_host = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFYNR27SPgJINtB95y5v+T80V3yK5RTd+c0NKho6yRWE";
-  arete = [arete_user arete_host];
-
   consus_user = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE/c8uEXFkY25C51F/QS+uPw1dBVCSrAaCYgy3lzRQd3";
   consus_host = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILgaHSl0Mv49oFjYV3TALqIQTpcgDy2vY2/2T+X0b6DD";
   consus = [consus_user consus_host];
@@ -33,7 +29,6 @@ in {
   "cloudflared-media.age".publicKeys = consus ++ poseidon;
   "homepage_env.age".publicKeys = consus ++ poseidon;
   "rd_conf.age".publicKeys = consus ++ poseidon;
-  "tailscale.age".publicKeys = arete ++ consus ++ geras ++ maniae ++ oizys ++ poseidon;
-  "wakatime.age".publicKeys = arete ++ consus;
+  "tailscale.age".publicKeys = consus ++ geras ++ maniae ++ oizys ++ poseidon;
   "wg-home.age".publicKeys = consus ++ poseidon;
 }
