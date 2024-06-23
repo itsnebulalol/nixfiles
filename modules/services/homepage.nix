@@ -15,7 +15,7 @@
       services.homepage-dashboard = {
         enable = true;
         openFirewall = true;
-        envrionmentFile = osConfig.age.secrets.homepage_env.path;
+        environmentFile = osConfig.age.secrets.homepage_env.path;
         docker = {
           # TODO: Figure out how to use docker socket proxy over tailscale
         };
@@ -42,7 +42,7 @@
                   description = "plex requests";
                   widget = {
                     type = "overseerr";
-                    url = "https://requests.itsnebula.net";
+                    url = "http://poseidon.coin-gray.ts.net:9007";
                     key = "{{HOMEPAGE_VAR_OVERSEERR_API_KEY}}";
                     fields = ["available" "processing"];
                   };
@@ -55,7 +55,7 @@
                   description = "media server";
                   widget = {
                     type = "jellyfin";
-                    url = "https://jellyfin.itsnebula.net";
+                    url = "http://poseidon.coin-gray.ts.net:8096";
                     key = "{{HOMEPAGE_VAR_JELLYFIN_API_KEY}}";
                     fields = ["movies" "series" "episodes"];
                     enableBlocks = true;
@@ -66,7 +66,7 @@
               {
                 Jellyseerr = {
                   icon = "jellyseerr.svg";
-                  href = "https://privaterequests.itsnebula.net";
+                  href = "http://poseidon.coin-gray.ts.net:9008";
                   description = "jellyfin requests";
                   widget = {
                     type = "jellyseerr";
@@ -179,26 +179,22 @@
             ];
           }
           {
-            Files = [
+            Miscellaneous = [
               {
                 RDTClient = {
                   icon = "rdt-client.svg";
-                  href = "http://media.coin-gray.ts.net:9001";
+                  href = "http://rdtclient.ms.itsnebula.net";
                   description = "real-debrid downloader";
-                  server = "docker-local";
-                  container = "rdtclient";
                 };
               }
               {
                 Prowlarr = {
                   icon = "prowlarr.svg";
-                  href = "http://media.coin-gray.ts.net:9002";
+                  href = "http://prowlarr.ms.itsnebula.net";
                   description = "torrent indexer";
-                  server = "docker-local";
-                  container = "prowlarr";
                   widget = {
                     type = "prowlarr";
-                    url = "http://media.coin-gray.ts.net:9002";
+                    url = "http://poseidon.coin-gray.ts.net:9002";
                     key = "{{HOMEPAGE_VAR_PROWLARR_API_KEY}}";
                     fields = [
                       "numberOfGrabs"
@@ -218,8 +214,8 @@
             saturate = 50;
             brightness = 50;
             opacity = 50;
-            cardBlur = "3xl";
           };
+          cardBlur = "3xl";
           theme = "dark";
           useEqualHeights = true;
           hideVersion = true;
@@ -242,9 +238,18 @@
         widgets = [
           {
             resources = {
+              label = "System";
               cpu = true;
               memory = true;
-              disk = "/";
+            };
+          }
+          {
+            resources = {
+              label = "Storage";
+              disk = [
+                "/"
+                "/data"
+              ];
             };
           }
           {

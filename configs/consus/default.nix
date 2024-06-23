@@ -9,6 +9,7 @@
   services = {
     adguard.enable = true;
     instafix.enable = true;
+    homepage.enable = true;
     samba = {
       enable = true;
 
