@@ -8,8 +8,10 @@
 
   services = {
     adguard.enable = true;
-    instafix.enable = true;
+    conduit.enable = true;
     homepage.enable = true;
+    instafix.enable = true;
+    nostr-relay.enable = true;
     samba = {
       enable = true;
 
