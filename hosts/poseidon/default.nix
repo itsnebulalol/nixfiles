@@ -45,7 +45,7 @@ _: {
     ];
 
     fileSystems."/mnt/music" = {
-      device = "nebula@consus:/data/Media/Music";
+      device = "nebula@consus:/data/files/Media/Music";
       fsType = "fuse.sshfs";
       options = ["allow_other" "_netdev" "default_permissions" "user" "idmap=user" "identityfile=/home/nebula/.ssh/id_ed25519" "uid=1000" "gid=100"];
     };

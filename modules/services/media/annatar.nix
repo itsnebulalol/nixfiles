@@ -3,7 +3,7 @@
   lib,
   ...
 }: {
-  options.services.media.annatar.enable = lib.mkEnableOption "Annatar" // {default = config.services.media.enable;};
+  options.services.media.annatar.enable = lib.mkEnableOption "Annatar";
 
   config.os = lib.mkIf (config.services.media.enable && config.services.media.annatar.enable) {
     systemd.tmpfiles.rules = [

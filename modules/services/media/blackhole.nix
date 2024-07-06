@@ -30,7 +30,6 @@
           TZ = "America/New_York";
           PUID = "1000";
           PGID = "1337";
-          BLACKHOLE_RD_MOUNT_TORRENTS_PATH = "/mnt/remote/realdebrid/torrents";
         };
         env_file = [
           osConfig.age.secrets.blackhole.path
@@ -53,7 +52,6 @@
           TZ = "America/New_York";
           PUID = "1000";
           PGID = "1337";
-          BLACKHOLE_RD_MOUNT_TORRENTS_PATH = "/mnt/remote/realdebrid/torrents";
         };
         env_file = [
           osConfig.age.secrets.blackhole4k.path
@@ -76,7 +74,6 @@
           TZ = "America/New_York";
           PUID = "1000";
           PGID = "1337";
-          BLACKHOLE_RD_MOUNT_TORRENTS_PATH = "/mnt/remote/realdebrid/torrents";
         };
         env_file = [
           osConfig.age.secrets.blackhole4kdv.path
@@ -84,28 +81,28 @@
         restart = "unless-stopped";
       };
 
-      blackholeextra.service = {
-        image = "docker.io/library/blackhole";
-        container_name = "blackholeextra";
-        depends_on = ["rclone"];
-        user = "1000:1337";
-        volumes = [
-          "/mnt:/mnt"
-          "/etc/media/blackholeextra/logs:/app/logs"
-          "/mnt/symlinks/sonarrextra:/app/blackhole/sonarrextra"
-          "/mnt/symlinks/radarrextra:/app/blackhole/radarrextra"
-        ];
-        environment = {
-          TZ = "America/New_York";
-          PUID = "1000";
-          PGID = "1337";
-          BLACKHOLE_RD_MOUNT_TORRENTS_PATH = "/mnt/remote/realdebrid/torrents";
-        };
-        env_file = [
-          osConfig.age.secrets.blackholeextra.path
-        ];
-        restart = "unless-stopped";
-      };
+#      blackholeextra.service = {
+#        image = "docker.io/library/blackhole";
+#        container_name = "blackholeextra";
+#        depends_on = ["rclone"];
+#        user = "1000:1337";
+#        volumes = [
+#          "/mnt:/mnt"
+#          "/etc/media/blackholeextra/logs:/app/logs"
+#          "/mnt/symlinks/sonarrextra:/app/blackhole/sonarrextra"
+#          "/mnt/symlinks/radarrextra:/app/blackhole/radarrextra"
+#        ];
+#        environment = {
+#          TZ = "America/New_York";
+#          PUID = "1000";
+#          PGID = "1337";
+#          BLACKHOLE_RD_MOUNT_TORRENTS_PATH = "/mnt/remote/realdebrid/torrents";
+#        };
+#        env_file = [
+#          osConfig.age.secrets.blackholeextra.path
+#        ];
+#        restart = "unless-stopped";
+#      };
     };
   };
 }

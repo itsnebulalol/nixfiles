@@ -25,10 +25,10 @@ in {
       os = {
         age.secrets = lib.mkMerge [
           (secretForHostnames ["consus"] ../../secrets/adguardhome_sync.age "adguardhome_sync" { owner = "nebula"; })
-          (secretForHostnames ["consus" "poseidon"] ../../secrets/blackhole.age "blackhole" {})
-          (secretForHostnames ["consus" "poseidon"] ../../secrets/blackhole4k.age "blackhole4k" {})
-          (secretForHostnames ["consus" "poseidon"] ../../secrets/blackhole4kdv.age "blackhole4kdv" {})
-          (secretForHostnames ["consus" "poseidon"] ../../secrets/blackholeextra.age "blackholeextra" {})
+          (secretForHostnames ["consus" "poseidon"] ../../secrets/blackhole.age "blackhole" { owner = "nebula"; })
+          (secretForHostnames ["consus" "poseidon"] ../../secrets/blackhole4k.age "blackhole4k" { owner = "nebula"; })
+          (secretForHostnames ["consus" "poseidon"] ../../secrets/blackhole4kdv.age "blackhole4kdv" { owner = "nebula"; })
+          (secretForHostnames ["consus" "poseidon"] ../../secrets/blackholeextra.age "blackholeextra" { owner = "nebula"; })
           (secretForHostnames ["consus" "maniae" "poseidon"] ../../secrets/caddy-cloudflare.age "caddy-cloudflare" { owner = "caddy"; })
           (secretForHostnames ["consus" "poseidon"] ../../secrets/cloudflared-media.age "cloudflared-media" { owner = "cloudflared"; })
           (secretForHostnames ["consus" "poseidon"] ../../secrets/homepage_env.age "homepage_env" {})

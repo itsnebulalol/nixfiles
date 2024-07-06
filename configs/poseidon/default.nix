@@ -9,6 +9,6 @@
   services = {
     tailscale.enable = true;
     media.enable = true;
-    watchtower.enable = true;
+    # watchtower.enable = true;
   };
 }

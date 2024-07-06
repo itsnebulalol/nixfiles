@@ -85,25 +85,25 @@
       };
 
       # Extra
-      sonarrextra.service = {
-        image = "ghcr.io/hotio/sonarr:release";
-        container_name = "sonarrextra";
-        depends_on = [
-          "rclone"
-          "sonarr"
-        ];
-        ports = [ "9304:8989" ];
-        volumes = [
-          "/mnt:/mnt"
-          "/etc/media/sonarrextra:/config"
-        ];
-        environment = {
-          TZ = "America/New_York";
-          PUID = "1000";
-          PGID = "1337";
-        };
-        restart = "unless-stopped";
-      };
+#      sonarrextra.service = {
+#        image = "ghcr.io/hotio/sonarr:release";
+#        container_name = "sonarrextra";
+#        depends_on = [
+#          "rclone"
+#          "sonarr"
+#        ];
+#        ports = [ "9304:8989" ];
+#        volumes = [
+#          "/mnt:/mnt"
+#          "/etc/media/sonarrextra:/config"
+#        ];
+#        environment = {
+#          TZ = "America/New_York";
+#          PUID = "1000";
+#          PGID = "1337";
+#        };
+#        restart = "unless-stopped";
+#      };
     };
 
     services.caddy = {
@@ -124,10 +124,10 @@
           import cloudflare
         '';
 
-        "sonarrextra.ms.itsnebula.net".extraConfig = ''
-          reverse_proxy 127.0.0.1:9304
-          import cloudflare
-        '';
+        #"sonarrextra.ms.itsnebula.net".extraConfig = ''
+        #  reverse_proxy 127.0.0.1:9304
+        #  import cloudflare
+        #'';
       };
     };
   };

@@ -85,25 +85,25 @@
       };
 
       # Extra
-      radarrextra.service = {
-        image = "ghcr.io/hotio/radarr:release";
-        container_name = "radarrextra";
-        depends_on = [
-          "rclone"
-          "radarr"
-        ];
-        ports = [ "9303:7878" ];
-        volumes = [
-          "/mnt:/mnt"
-          "/etc/media/radarrextra:/config"
-        ];
-        environment = {
-          TZ = "America/New_York";
-          PUID = "1000";
-          PGID = "1337";
-        };
-        restart = "unless-stopped";
-      };
+#      radarrextra.service = {
+#        image = "ghcr.io/hotio/radarr:release";
+#        container_name = "radarrextra";
+#        depends_on = [
+#          "rclone"
+#          "radarr"
+#        ];
+#        ports = [ "9303:7878" ];
+#        volumes = [
+#          "/mnt:/mnt"
+#          "/etc/media/radarrextra:/config"
+#        ];
+#        environment = {
+#          TZ = "America/New_York";
+#          PUID = "1000";
+#          PGID = "1337";
+#        };
+#        restart = "unless-stopped";
+#      };
     };
 
     services.caddy = {
@@ -124,10 +124,10 @@
           import cloudflare
         '';
 
-        "radarrextra.ms.itsnebula.net".extraConfig = ''
-          reverse_proxy 127.0.0.1:9303
-          import cloudflare
-        '';
+        #"radarrextra.ms.itsnebula.net".extraConfig = ''
+        #  reverse_proxy 127.0.0.1:9303
+        #  import cloudflare
+        #'';
       };
     };
   };
