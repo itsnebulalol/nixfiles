@@ -55,7 +55,7 @@
     services.caddy = {
       enable = true;
       virtualHosts = {
-        "annatar.ms.itsnebula.net".extraConfig = ''
+        "annatar.m.svrd.me".extraConfig = ''
           reverse_proxy 127.0.0.1:9011
           import cloudflare
         '';

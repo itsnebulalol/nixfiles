@@ -62,7 +62,7 @@ in {
         # nixos-option = prev.nixos-option.override {nix = prev.nixVersions.nix_2_15;};
       })
     ];
-    programs.command-not-found.enable = false;
+    programs.command-not-found.enable = true;
 
     documentation = {
       enable = true;

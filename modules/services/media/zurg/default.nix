@@ -96,5 +96,15 @@
         restart = "unless-stopped";
       };
     };
+
+    services.caddy = {
+      enable = true;
+      virtualHosts = {
+        "zurg.m.svrd.me".extraConfig = ''
+          reverse_proxy 127.0.0.1:9999
+          import cloudflare
+        '';
+      };
+    };
   };
 }

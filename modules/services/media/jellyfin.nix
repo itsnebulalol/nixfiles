@@ -39,6 +39,21 @@
       };
     };
 
+    services.caddy = {
+      enable = true;
+      virtualHosts = {
+        "jellyfin.svrd.me".extraConfig = ''
+          reverse_proxy 127.0.0.1:8096
+          import cloudflare
+        '';
+
+        "privaterequests.svrd.me".extraConfig = ''
+          reverse_proxy 127.0.0.1:9008
+          import cloudflare
+        '';
+      };
+    };
+
     services.cloudflared = {
       enable = true;
       tunnels = {

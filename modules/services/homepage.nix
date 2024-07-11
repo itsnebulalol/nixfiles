@@ -25,7 +25,7 @@
               {
                 Plex = {
                   icon = "plex.svg";
-                  href = "https://plex.itsnebula.net";
+                  href = "https://plex.svrd.me";
                   description = "family media server";
                   widget = {
                     type = "plex";
@@ -38,7 +38,7 @@
               {
                 Overseerr = {
                   icon = "overseerr.svg";
-                  href = "https://requests.itsnebula.net";
+                  href = "https://requests.svrd.me";
                   description = "plex requests";
                   widget = {
                     type = "overseerr";
@@ -51,7 +51,7 @@
               {
                 Jellyfin = {
                   icon = "jellyfin.svg";
-                  href = "https://jellyfin.itsnebula.net";
+                  href = "https://jellyfin.svrd.me";
                   description = "media server";
                   widget = {
                     type = "jellyfin";
@@ -66,11 +66,11 @@
               {
                 Jellyseerr = {
                   icon = "jellyseerr.svg";
-                  href = "http://poseidon.coin-gray.ts.net:9008";
+                  href = "https://privaterequests.svrd.me";
                   description = "jellyfin requests";
                   widget = {
                     type = "jellyseerr";
-                    url = "https://privaterequests.itsnebula.net";
+                    url = "http://poseidon.coin-gray.ts.net:9008";
                     key = "{{HOMEPAGE_VAR_JELLYSEERR_API_KEY}}";
                     fields = ["available" "processing"];
                   };
@@ -83,7 +83,7 @@
               {
                 Radarr = {
                   icon = "radarr.svg";
-                  href = "https://radarr.ms.itsnebula.net";
+                  href = "https://radarr.m.svrd.me";
                   description = "movie downloader";
                   widget = {
                     type = "radarr";
@@ -95,7 +95,7 @@
               {
                 "Radarr 4K" = {
                   icon = "radarr.svg";
-                  href = "https://radarr4k.ms.itsnebula.net";
+                  href = "https://radarr4k.m.svrd.me";
                   description = "4k movie downloader";
                   widget = {
                     type = "radarr";
@@ -107,7 +107,7 @@
               {
                 "Radarr 4K DV" = {
                   icon = "radarr.svg";
-                  href = "https://radarr4kdv.ms.itsnebula.net";
+                  href = "https://radarr4kdv.m.svrd.me";
                   description = "4k dolby vision movie downloader";
                   widget = {
                     type = "radarr";
@@ -116,22 +116,22 @@
                   };
                 };
               }
-              {
-                "Radarr Extra" = {
-                  icon = "radarr.svg";
-                  href = "https://radarrextra.ms.itsnebula.net";
-                  description = "extra movie downloader";
-                  widget = {
-                    type = "radarr";
-                    url = "http://poseidon.coin-gray.ts.net:9303";
-                    key = "{{HOMEPAGE_VAR_RADARREXTRA_API_KEY}}";
-                  };
-                };
-              }
+              # {
+              #   "Radarr Extra" = {
+              #     icon = "radarr.svg";
+              #     href = "https://radarrextra.m.svrd.me";
+              #     description = "extra movie downloader";
+              #     widget = {
+              #       type = "radarr";
+              #       url = "http://poseidon.coin-gray.ts.net:9303";
+              #       key = "{{HOMEPAGE_VAR_RADARREXTRA_API_KEY}}";
+              #     };
+              #   };
+              # }
               {
                 Sonarr = {
                   icon = "sonarr.svg";
-                  href = "https://sonarr.ms.itsnebula.net";
+                  href = "https://sonarr.m.svrd.me";
                   description = "TV downloader";
                   widget = {
                     type = "sonarr";
@@ -143,7 +143,7 @@
               {
                 "Sonarr 4K" = {
                   icon = "sonarr.svg";
-                  href = "https://sonarr4k.ms.itsnebula.net";
+                  href = "https://sonarr4k.m.svrd.me";
                   description = "4k TV downloader";
                   widget = {
                     type = "sonarr";
@@ -155,7 +155,7 @@
               {
                 "Sonarr 4K DV" = {
                   icon = "sonarr.svg";
-                  href = "https://sonarr4kdv.ms.itsnebula.net";
+                  href = "https://sonarr4kdv.m.svrd.me";
                   description = "4k dolby vision TV downloader";
                   widget = {
                     type = "sonarr";
@@ -164,33 +164,33 @@
                   };
                 };
               }
-              {
-                "Sonarr Extra" = {
-                  icon = "sonarr.svg";
-                  href = "https://sonarrextra.ms.itsnebula.net";
-                  description = "extra TV downloader";
-                  widget = {
-                    type = "sonarr";
-                    url = "http://poseidon.coin-gray.ts.net:9304";
-                    key = "{{HOMEPAGE_VAR_SONARREXTRA_API_KEY}}";
-                  };
-                };
-              }
+              # {
+              #   "Sonarr Extra" = {
+              #     icon = "sonarr.svg";
+              #     href = "https://sonarrextra.m.svrd.me";
+              #     description = "extra TV downloader";
+              #     widget = {
+              #       type = "sonarr";
+              #       url = "http://poseidon.coin-gray.ts.net:9304";
+              #       key = "{{HOMEPAGE_VAR_SONARREXTRA_API_KEY}}";
+              #     };
+              #   };
+              # }
             ];
           }
           {
             Miscellaneous = [
-              {
-                RDTClient = {
-                  icon = "rdt-client.svg";
-                  href = "http://rdtclient.ms.itsnebula.net";
-                  description = "real-debrid downloader";
-                };
-              }
+              # {
+              #   RDTClient = {
+              #     icon = "rdt-client.svg";
+              #     href = "https://rdtclient.m.svrd.me";
+              #     description = "real-debrid downloader";
+              #   };
+              # }
               {
                 Prowlarr = {
                   icon = "prowlarr.svg";
-                  href = "http://prowlarr.ms.itsnebula.net";
+                  href = "https://prowlarr.m.svrd.me";
                   description = "torrent indexer";
                   widget = {
                     type = "prowlarr";
@@ -202,6 +202,13 @@
                     ];
                   };
                 };
+              }
+              {
+                Zurg = {
+                  icon = "rdt-client.svg";
+                  href = "https://zurg.m.svrd.me";
+                  description = "real-debrid mount";
+                }
               }
             ];
           }
@@ -266,7 +273,7 @@
       services.caddy = {
         enable = true;
         virtualHosts = {
-          "home.itsnebula.net".extraConfig = ''
+          "svrd.me".extraConfig = ''
             reverse_proxy 127.0.0.1:8082
             import cloudflare
           '';

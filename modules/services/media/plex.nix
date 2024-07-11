@@ -65,6 +65,21 @@
       allowedUDPPorts = [ 1900 5353 32410 32412 32413 32414 ];
     };
 
+    services.caddy = {
+      enable = true;
+      virtualHosts = {
+        "plex.svrd.me".extraConfig = ''
+          reverse_proxy 127.0.0.1:32400
+          import cloudflare
+        '';
+
+        "requests.svrd.me".extraConfig = ''
+          reverse_proxy 127.0.0.1:9007
+          import cloudflare
+        '';
+      };
+    };
+
     services.cloudflared = {
       enable = true;
       tunnels = {
