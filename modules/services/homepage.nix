@@ -208,7 +208,7 @@
                   icon = "rdt-client.svg";
                   href = "https://zurg.m.svrd.me";
                   description = "real-debrid mount";
-                }
+                };
               }
             ];
           }
@@ -268,16 +268,6 @@
             };
           }
         ];
-      };
-
-      services.caddy = {
-        enable = true;
-        virtualHosts = {
-          "svrd.me".extraConfig = ''
-            reverse_proxy 127.0.0.1:8082
-            import cloudflare
-          '';
-        };
       };
     };
   };

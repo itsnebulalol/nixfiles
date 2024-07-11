@@ -38,6 +38,11 @@
           reverse_proxy consus.coin-gray.ts.net:4629
           import cloudflare
         '';
+
+        "svrd.me".extraConfig = ''
+          reverse_proxy consus.coin-gray.ts.net:8082
+          import cloudflare
+        '';
       };
     };
   };
