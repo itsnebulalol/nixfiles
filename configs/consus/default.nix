@@ -12,6 +12,7 @@
     homepage.enable = true;
     instafix.enable = true;
     nostr-relay.enable = true;
+    ntfy.enable = true;
     samba = {
       enable = true;
 
