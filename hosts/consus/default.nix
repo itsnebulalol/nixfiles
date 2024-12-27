@@ -15,12 +15,16 @@
 
     networking = {
       hostName = "consus";
-      #networkmanager.enable = true;
+      networkmanager.enable = true;
+      firewall.allowedTCPPorts = [3260];
     };
 
-    #systemd.services.NetworkManager-wait-online.enable = false;
+    systemd.services.NetworkManager-wait-online.enable = false;
 
-    services.avahi.enable = true;
+    services = {
+      avahi.enable = true;
+      target.enable = true;
+    };
 
     users.users = let
       keys = [

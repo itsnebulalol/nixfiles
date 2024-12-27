@@ -8,6 +8,7 @@
 
   services = {
     adguard.enable = true;
+    attic.enable = true;
     conduit.enable = true;
     homepage.enable = true;
     instafix.enable = true;
