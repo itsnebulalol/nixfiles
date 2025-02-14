@@ -3,22 +3,11 @@
 
   inputs = {
     agenix.url = "github:ryantm/agenix";
-    apple-silicon-support.url = "github:tpwrules/nixos-apple-silicon";
-    arion.url = "github:hercules-ci/arion";
-    conduwuit.url = "github:girlbossceo/conduwuit";
     nix-super.url = "github:privatevoid-net/nix-super";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixos-hardware.url = "github:NixOS/nixos-hardware";
     home-manager = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager";
-    };
-    plasma-manager = {
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        home-manager.follows = "home-manager";
-      };
-      url = "github:pjones/plasma-manager";
     };
     nh = {
       inputs.nixpkgs.follows = "nixpkgs";
@@ -29,14 +18,11 @@
       flake = false;
       url = "github:itsnebulalol/nvchad-config";
     };
-    spicetify-nix.url = "github:the-argus/spicetify-nix";
-    tiny-dfr.url = "github:itsnebulalol/tiny-dfr";
   };
 
   outputs = inputs @ {nixpkgs, ...}: let
     forAllSystems = nixpkgs.lib.genAttrs [
       "aarch64-linux"
-      "x86_64-linux"
     ];
 
     combinedManager = import (builtins.fetchTarball {
@@ -52,33 +38,7 @@
     );
 
     nixosConfigurations = {
-      # Dell PowerEdge 2900
-      consus = combinedManager.nixosSystem {
-        inherit inputs;
-        configuration = {
-          system = "x86_64-linux";
-          modules = [
-            ./modules
-            ./hosts/consus
-            ./configs/consus
-          ];
-        };
-      };
-
-      # Dell Inspiron
-      geras = combinedManager.nixosSystem {
-        inherit inputs;
-        configuration = {
-          system = "x86_64-linux";
-          modules = [
-            ./modules
-            ./hosts/geras
-            ./configs/geras
-          ];
-        };
-      };
-
-      # Oracle VPS 3
+      # Oracle VPS
       maniae = combinedManager.nixosSystem {
         inherit inputs;
         configuration = {
@@ -87,32 +47,6 @@
             ./modules
             ./hosts/maniae
             ./configs/maniae
-          ];
-        };
-      };
-
-      # Oracle VPS (test)
-      oizys = combinedManager.nixosSystem {
-        inherit inputs;
-        configuration = {
-          system = "x86_64-linux";
-          modules = [
-            ./modules
-            ./hosts/oizys
-            ./configs/oizys
-          ];
-        };
-      };
-
-      # Oracle VPS 2
-      poseidon = combinedManager.nixosSystem {
-        inherit inputs;
-        configuration = {
-          system = "aarch64-linux";
-          modules = [
-            ./modules
-            ./hosts/poseidon
-            ./configs/poseidon
           ];
         };
       };

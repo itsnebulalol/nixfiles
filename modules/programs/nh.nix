@@ -5,7 +5,7 @@
 }: {
   os.environment = {
     systemPackages = [inputs.nh.packages.${pkgs.system}.default];
-    sessionVariables.FLAKE = "/home/nebula/nixfiles";
+    sessionVariables.NH_FLAKE = "/home/nebula/nixfiles";
   };
 
   os.nix.settings = {

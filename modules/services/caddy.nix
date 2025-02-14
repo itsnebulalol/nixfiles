@@ -14,38 +14,38 @@
 
     services.caddy = {
       enable = true;
-      package = pkgs.caddy-custom;
+      package = pkgs.caddy.withPlugins {
+        plugins = [
+          "github.com/caddy-dns/cloudflare@v0.0.0-20240703190432-89f16b99c18e"
+        ];
+        hash = "sha256-jCcSzenewQiW897GFHF9WAcVkGaS/oUu63crJu7AyyQ=";
+      };
       extraConfig = ''
         import ./cloudflare
       '';
       virtualHosts = {
         "f.itsnebula.net".extraConfig = ''
-          reverse_proxy consus.coin-gray.ts.net:7697
+          reverse_proxy 10.13.0.105:15000
           import cloudflare
         '';
 
-        "ig.itsnebula.net".extraConfig = ''
-          reverse_proxy consus.coin-gray.ts.net:2858
+        "attic.svrd.me".extraConfig = ''
+          reverse_proxy 10.13.0.13:7777
           import cloudflare
         '';
 
-        "matrix.itsnebula.net".extraConfig = ''
-          reverse_proxy /_matrix/* consus.coin-gray.ts.net:6167
+        "ntfy.svrd.me".extraConfig = ''
+          reverse_proxy 10.13.0.21:8080
           import cloudflare
         '';
 
-        "nostr.itsnebula.net".extraConfig = ''
-          reverse_proxy consus.coin-gray.ts.net:4629
+        "frigate.h.svrd.me".extraConfig = ''
+          reverse_proxy 10.13.0.16:8971
           import cloudflare
         '';
 
-        "svrd.me".extraConfig = ''
-          reverse_proxy consus.coin-gray.ts.net:8082
-          import cloudflare
-        '';
-
-        "notify.svrd.me".extraConfig = ''
-          reverse_proxy consus.coin-gray.ts.net:9841
+        "hass.h.svrd.me".extraConfig = ''
+          reverse_proxy 10.13.0.20:8123
           import cloudflare
         '';
       };
