@@ -8,10 +8,10 @@
 
 ### Programs
 
+- bash
 - Git
 - nh
-- Neovim
-- zsh
+- vim
 
 ### Services
 
