@@ -38,13 +38,11 @@
       "https://nix-community.cachix.org"
       "https://cache.nixos.org"
       "https://cache.garnix.io"
-      "https://attic.kennel.juneis.dog/conduwuit"
     ];
     trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
-      "conduwuit:lYPVh7o1hLu1idH4Xt2QHaRa49WRGSAqzcfFd94aOTw="
     ];
 
     trusted-users = [
@@ -61,6 +59,7 @@ in {
         nix-super = inputs.nix-super.packages.${prev.system}.default;
         # nixos-option = prev.nixos-option.override {nix = prev.nixVersions.nix_2_15;};
       })
+      inputs.nur.overlays.default
     ];
     programs.command-not-found.enable = true;
 

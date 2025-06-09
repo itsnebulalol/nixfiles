@@ -4,6 +4,6 @@ let
   maniae = [maniae_user maniae_host];
 
 in {
-  "caddy-cloudflare.age".publicKeys = consus ++ maniae ++ poseidon;
-  "tailscale.age".publicKeys = consus ++ geras ++ maniae ++ oizys ++ poseidon;
+  "caddy-cloudflare.age".publicKeys = maniae;
+  "tailscale.age".publicKeys = maniae;
 }

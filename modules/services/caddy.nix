@@ -16,29 +16,14 @@
       enable = true;
       package = pkgs.caddy.withPlugins {
         plugins = [
-          "github.com/caddy-dns/cloudflare@v0.0.0-20240703190432-89f16b99c18e"
+          "github.com/caddy-dns/cloudflare@v0.2.2-0.20250506153119-35fb8474f57d"
         ];
-        hash = "sha256-jCcSzenewQiW897GFHF9WAcVkGaS/oUu63crJu7AyyQ=";
+        hash = "sha256-xMxNAg08LDVifhsryGXV22LXqgRDdfjmsU0NfbUJgMg=";
       };
       extraConfig = ''
         import ./cloudflare
       '';
       virtualHosts = {
-        "f.itsnebula.net".extraConfig = ''
-          reverse_proxy 10.13.0.105:15000
-          import cloudflare
-        '';
-
-        "attic.svrd.me".extraConfig = ''
-          reverse_proxy 10.13.0.13:7777
-          import cloudflare
-        '';
-
-        "ntfy.svrd.me".extraConfig = ''
-          reverse_proxy 10.13.0.21:8080
-          import cloudflare
-        '';
-
         "frigate.h.svrd.me".extraConfig = ''
           reverse_proxy 10.13.0.16:8971
           import cloudflare

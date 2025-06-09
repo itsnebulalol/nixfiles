@@ -4,7 +4,6 @@
   rebuildCommand = "nh os switch";
 
   agenix.enable = true;
-  nur.enable = true;
 
   services = {
     caddy.enable = true;

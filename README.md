@@ -2,7 +2,7 @@
 
 ## Hosts
 
-- maniae (Oracle Cloud 3)
+- maniae (Oracle Cloud)
 
 ## Modules
 
